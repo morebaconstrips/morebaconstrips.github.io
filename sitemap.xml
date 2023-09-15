@@ -2,23 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://morebaconstrips.github.io/writeups/</loc>
+    <lastmod>2023-09-15T19:04:28+02:00</lastmod>
+  </url><url>
     <loc>https://morebaconstrips.github.io/</loc>
-    <lastmod>2023-09-15T17:18:41+02:00</lastmod>
+    <lastmod>2023-09-15T18:57:26+02:00</lastmod>
   </url><url>
-    <loc>https://morebaconstrips.github.io/posts/mypost/</loc>
-    <lastmod>2023-09-15T17:18:41+02:00</lastmod>
+    <loc>https://morebaconstrips.github.io/projects/new_project/</loc>
+    <lastmod>2023-09-15T18:57:26+02:00</lastmod>
   </url><url>
-    <loc>https://morebaconstrips.github.io/posts/</loc>
-    <lastmod>2023-09-15T17:18:41+02:00</lastmod>
+    <loc>https://morebaconstrips.github.io/projects/</loc>
+    <lastmod>2023-09-15T18:57:26+02:00</lastmod>
   </url><url>
-    <loc>https://morebaconstrips.github.io/tags/</loc>
-    <lastmod>2023-09-15T17:18:41+02:00</lastmod>
-  </url><url>
-    <loc>https://morebaconstrips.github.io/tags/untagged/</loc>
-    <lastmod>2023-09-15T17:18:41+02:00</lastmod>
+    <loc>https://morebaconstrips.github.io/about/</loc>
+    <lastmod>2023-09-15T18:51:22+02:00</lastmod>
   </url><url>
     <loc>https://morebaconstrips.github.io/blog/</loc>
   </url><url>
     <loc>https://morebaconstrips.github.io/series/</loc>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/tags/</loc>
   </url>
 </urlset>

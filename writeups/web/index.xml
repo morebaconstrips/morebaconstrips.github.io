@@ -9,6 +9,15 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 15 Sep 2023 21:14:35 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/writeups/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>XSS_1</title>
+      <link>https://morebaconstrips.github.io/writeups/web/xss_1/</link>
+      <pubDate>Sat, 16 Sep 2023 03:27:05 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/web/xss_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SQL_injection 1</title>
       <link>https://morebaconstrips.github.io/writeups/web/sql_injection-1/</link>
       <pubDate>Fri, 15 Sep 2023 20:48:53 +0200</pubDate>

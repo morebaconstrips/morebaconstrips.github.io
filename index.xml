@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 15 Sep 2023 21:14:35 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Sep 2023 03:37:43 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cookie_cleaner</title>
+      <link>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</link>
+      <pubDate>Sat, 16 Sep 2023 03:37:43 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>whistle_blower</title>
+      <link>https://morebaconstrips.github.io/writeups/forensics/whistle_blower/</link>
+      <pubDate>Sat, 16 Sep 2023 03:31:38 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/forensics/whistle_blower/</guid>
+      <description>While going through some books, Alice found the identity of the whistleblower in their company and was utterly suprised by the name. She needed to inform Eve about it but she didn&amp;rsquo;t know who is watching her emails. So she decided to hide the message in her email to Eve. See if you can figure out who betrayed the company.
+Download: Dear_Eve.txt
+Content of the file:
+Dear Eve, Thank you for your email informing me of your absence.</description>
+    </item>
+    
+    <item>
+      <title>XSS_1</title>
+      <link>https://morebaconstrips.github.io/writeups/web/xss_1/</link>
+      <pubDate>Sat, 16 Sep 2023 03:27:05 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/web/xss_1/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>SQL_injection 1</title>
       <link>https://morebaconstrips.github.io/writeups/web/sql_injection-1/</link>

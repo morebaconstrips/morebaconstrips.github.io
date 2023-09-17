@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.
+After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://morebaconstrips.github.io/writeups/reverse/key_genie/" />
+
+
+    <title>
+        
+            key_genie :: Gabriele Abbate  — Cybersecurity MSc student
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="key_genie">
+<meta itemprop="description" content="While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.
+After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]"><meta itemprop="datePublished" content="2023-09-16T14:37:02+02:00" />
+<meta itemprop="dateModified" content="2023-09-16T14:37:02+02:00" />
+<meta itemprop="wordCount" content="692"><meta itemprop="image" content="https://morebaconstrips.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://morebaconstrips.github.io/"/>
+
+<meta name="twitter:title" content="key_genie"/>
+<meta name="twitter:description" content="While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.
+After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]"/>
+
+
+
+    <meta property="og:title" content="key_genie" />
+<meta property="og:description" content="While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.
+After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://morebaconstrips.github.io/writeups/reverse/key_genie/" /><meta property="og:image" content="https://morebaconstrips.github.io/"/><meta property="article:section" content="writeups" />
+<meta property="article:published_time" content="2023-09-16T14:37:02+02:00" />
+<meta property="article:modified_time" content="2023-09-16T14:37:02+02:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-09-16 14:37:02 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                gabriele.portfolio.sh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">~/about</a></li><li><a href="/projects">~/projects</a></li><li><a href="/writeups">~/writeups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://morebaconstrips.github.io/writeups/reverse/key_genie/">key_genie</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <blockquote>
+<p>While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.</p>
+<p>After spinning up the docker container, you can connect to it using <code>netcat</code>, by executing <code>$ netcat [ip] [port]</code></p>
+</blockquote>
+<p>I used Ghidra to decompile the ELF, this is what the main looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>undefined8 <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> cVar1;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">long</span> in_FS_OFFSET;
+</span></span><span style="display:flex;"><span>  undefined4 local_22c;
+</span></span><span style="display:flex;"><span>  undefined4 local_228;
+</span></span><span style="display:flex;"><span>  undefined4 local_224;
+</span></span><span style="display:flex;"><span>  undefined4 local_220;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> local_21c;
+</span></span><span style="display:flex;"><span>  undefined local_218 [<span style="color:#ae81ff">256</span>];
+</span></span><span style="display:flex;"><span>  undefined local_118 [<span style="color:#ae81ff">264</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">long</span> local_10;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  local_10 <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">long</span> <span style="color:#f92672">*</span>)(in_FS_OFFSET <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x28</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">genie_say</span>(<span style="color:#e6db74">&#34;Please enter your serial&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span>( true ) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>( true ) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;&gt;&gt;&gt; &#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fflush</span>(stdout);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">__isoc99_scanf</span>(<span style="color:#f92672">&amp;</span>DAT_00102ae8,local_218);
+</span></span><span style="display:flex;"><span>      local_21c <span style="color:#f92672">=</span> <span style="color:#a6e22e">__isoc99_sscanf</span>(local_218,<span style="color:#e6db74">&#34;%u-%u-%u-%u%s&#34;</span>,<span style="color:#f92672">&amp;</span>local_22c,<span style="color:#f92672">&amp;</span>local_228,<span style="color:#f92672">&amp;</span>local_224,
+</span></span><span style="display:flex;"><span>                                  <span style="color:#f92672">&amp;</span>local_220,local_118);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (local_21c <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">genie_say</span>(<span style="color:#e6db74">&#34;Wrong format (XXX-XXX-XXX-XXX)&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    cVar1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">check_serial</span>(local_22c,local_228,local_224,local_220);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (cVar1 <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;\0&#39;</span>) <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">genie_say</span>(<span style="color:#e6db74">&#34;Invalid Serial&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">genie_say</span>(<span style="color:#e6db74">&#34;THS{not_the_actual_flag}&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (local_10 <span style="color:#f92672">!=</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">long</span> <span style="color:#f92672">*</span>)(in_FS_OFFSET <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x28</span>)) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">/* WARNING: Subroutine does not return */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">__stack_chk_fail</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then I took a look to the function check_serial:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>undefined8 <span style="color:#a6e22e">check_serial</span>(uint param_1,uint param_2,uint param_3,uint param_4)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  uint uVar1;
+</span></span><span style="display:flex;"><span>  uint uVar2;
+</span></span><span style="display:flex;"><span>  undefined8 uVar3;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> ((((param_1 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>) <span style="color:#f92672">&amp;&amp;</span> (param_2 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>)) <span style="color:#f92672">&amp;&amp;</span> (param_3 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>)) <span style="color:#f92672">&amp;&amp;</span> (param_4 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>)) {
+</span></span><span style="display:flex;"><span>    uVar1 <span style="color:#f92672">=</span> (param_1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    uVar2 <span style="color:#f92672">=</span> (param_3 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ((param_1 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">&lt;</span> uVar1) <span style="color:#f92672">&amp;&amp;</span> (uVar1 <span style="color:#f92672">&lt;</span> param_1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (param_2 <span style="color:#f92672">%</span> param_1 <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (((param_3 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> param_2 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">-</span> param_1 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>            (uVar2 <span style="color:#f92672">==</span> (param_2 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> uVar1)) <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>           (param_3 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">==</span> param_2 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> param_1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> ((((param_3 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&amp;&amp;</span> ((uVar2 <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)) <span style="color:#f92672">&amp;&amp;</span> ((param_3 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (param_4 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">==</span> (param_4 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">^</span> (param_4 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>)) {
+</span></span><span style="display:flex;"><span>              uVar3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>              uVar3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            uVar3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>          uVar3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        uVar3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      uVar3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    uVar3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> uVar3;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I found the SAT values by using the Z3 library in the following python script</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> z3 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create Z3 integer variables for param_1, param_2, param_3, and param_4</span>
+</span></span><span style="display:flex;"><span>param_1 <span style="color:#f92672">=</span> BitVec(<span style="color:#e6db74">&#39;param_1&#39;</span>, <span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>param_2 <span style="color:#f92672">=</span> BitVec(<span style="color:#e6db74">&#39;param_2&#39;</span>, <span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>param_3 <span style="color:#f92672">=</span> BitVec(<span style="color:#e6db74">&#39;param_3&#39;</span>, <span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>param_4 <span style="color:#f92672">=</span> BitVec(<span style="color:#e6db74">&#39;param_4&#39;</span>, <span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a Z3 solver</span>
+</span></span><span style="display:flex;"><span>solver <span style="color:#f92672">=</span> Solver()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add constraints based on your conditions</span>
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_1 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_2 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_3 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_4 <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_1 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_2 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_3 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_4 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uVar1 <span style="color:#f92672">=</span> (param_1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>uVar2 <span style="color:#f92672">=</span> (param_3 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_1 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">&lt;</span> uVar1)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(uVar1 <span style="color:#f92672">&lt;</span> param_1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_2 <span style="color:#f92672">%</span> param_1 <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cond1 <span style="color:#f92672">=</span> param_3 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> param_2 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">-</span> param_1 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>cond2 <span style="color:#f92672">=</span> uVar2 <span style="color:#f92672">==</span> (param_2 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> uVar1
+</span></span><span style="display:flex;"><span>cond3 <span style="color:#f92672">=</span> param_3 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">==</span> param_2 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">-</span> param_1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(cond1)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(cond2)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(cond3)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cond4 <span style="color:#f92672">=</span> (param_3 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>cond5 <span style="color:#f92672">=</span> (uVar2 <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>cond6 <span style="color:#f92672">=</span> (param_3 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(cond4)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(cond5)
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(cond6)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>solver<span style="color:#f92672">.</span>add(param_4 <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">==</span> (param_4 <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">^</span> (param_4 <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if there exists a solution</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> solver<span style="color:#f92672">.</span>check() <span style="color:#f92672">==</span> sat:
+</span></span><span style="display:flex;"><span>    model <span style="color:#f92672">=</span> solver<span style="color:#f92672">.</span>model()
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get the values that satisfy the conditions</span>
+</span></span><span style="display:flex;"><span>    solution_param_1 <span style="color:#f92672">=</span> model[param_1]<span style="color:#f92672">.</span>as_long()
+</span></span><span style="display:flex;"><span>    solution_param_2 <span style="color:#f92672">=</span> model[param_2]<span style="color:#f92672">.</span>as_long()
+</span></span><span style="display:flex;"><span>    solution_param_3 <span style="color:#f92672">=</span> model[param_3]<span style="color:#f92672">.</span>as_long()
+</span></span><span style="display:flex;"><span>    solution_param_4 <span style="color:#f92672">=</span> model[param_4]<span style="color:#f92672">.</span>as_long()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;param_1: </span><span style="color:#e6db74">{</span>solution_param_1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;param_2: </span><span style="color:#e6db74">{</span>solution_param_2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;param_3: </span><span style="color:#e6db74">{</span>solution_param_3<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;param_4: </span><span style="color:#e6db74">{</span>solution_param_4<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;No solution found.&#34;</span>)
+</span></span></code></pre></div><p>output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>param_1: <span style="color:#ae81ff">134</span>
+</span></span><span style="display:flex;"><span>param_2: <span style="color:#ae81ff">536</span>
+</span></span><span style="display:flex;"><span>param_3: <span style="color:#ae81ff">402</span>
+</span></span><span style="display:flex;"><span>param_4: <span style="color:#ae81ff">55</span>
+</span></span></code></pre></div><pre tabindex="0"><code>&gt;&gt;&gt; 134-536-402-55
+                                         ___________________________________    
+                         (,.,,(         /                                   \  
+                             ,#.*      |  THS{I_can_show_you_the_serial}     |  
+                           */(#//.#...  \  _________________________________/   
+                            #*#(@#/((    |/                                     
+                            *((## ####%%%#%%(                    #       , (    
+                            *#**#(/###%%%%%%%%%#*              (((#%####((((((, 
+                          ,#%%#(#...,#%%(%%%%%%%%%#           *##/,,,(#%((      
+  %#%##,    (%%#(.    ,#%%%%%%%*/#&amp;&amp;@@@%%,#%%#####%%(/        /(//((//*/(,      
+ /((###/#%%%#/(/    *%%%%%%%%%%%* (###(,./#%%####(###%%(    %#&amp;%&amp;#**#&amp;          
+ *(/(##%%%#((#&amp;     %%%%%%%%%%%%%%#////(#%%#######/((###%%%%%%#/&amp;%(%&amp;%          
+     %#(/((//(.    %%%%%%%%%%%%%%%%%%########((((##*/((#######((((((%           
+       ,&amp;/*#%#%#%%%%%##################((((((///((#/**//((((((///((/            
+       (%/%@&amp;&amp;(#%#####((((((((((((((/////////////(((,,****//////(#/             
+      (#(((((((#((((((///////////////////////////(#(*******//((/.               
+       (#(////////////////*******///////////////((#,  # *((/,                   
+        ##((//////((#/, @******//////////////*//(#(                             
+          **((#((*       ,///////(((((/////**//(#(                              
+                          /(((//(((((/////*//(##                                
+                           *#(((((((//////(((*                                  
+                          //##((((/////(((                                      
+    *,,                  ((((((////*/(/.                                        
+  ###%((#%,             ,##(/*/(*,,*//.                                         
+  *((#&amp; .//##         *%%#*/****/%                                              
+   *(/(#*. (/#*   .,#%##(/***//                                                 
+     .(//(#########(((///(/.                                                    
+        */((///////(((**                                                        
+               ,/(@                                                             
+                 /*/*                                                           
+                   &amp;#/((&amp;   /#/                                                 
+                           .,*///#(                                             
+                                 /*.                                            
+                                  ,/(%//.#(###*(                                
+                                    ,*(((*#,,.,#(//((/,(
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+
+
+
+    </body>
+</html>

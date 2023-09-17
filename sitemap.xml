@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</loc>
-    <lastmod>2023-09-16T03:37:43+02:00</lastmod>
-  </url><url>
     <loc>https://morebaconstrips.github.io/</loc>
+    <lastmod>2023-09-17T23:45:37+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/projects/paprika/</loc>
+    <lastmod>2023-09-17T23:45:37+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/projects/</loc>
+    <lastmod>2023-09-17T23:45:37+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/projects/adversarial/</loc>
+    <lastmod>2023-09-16T19:01:48+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/projects/thera/</loc>
+    <lastmod>2023-09-16T18:59:55+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/writeups/web/git_gud/</loc>
+    <lastmod>2023-09-16T18:48:00+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/writeups/reverse/key_genie/</loc>
+    <lastmod>2023-09-16T14:37:02+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/writeups/misc/nyte_encoding/</loc>
+    <lastmod>2023-09-16T14:35:18+02:00</lastmod>
+  </url><url>
+    <loc>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</loc>
     <lastmod>2023-09-16T03:37:43+02:00</lastmod>
   </url><url>
     <loc>https://morebaconstrips.github.io/writeups/misc/</loc>
@@ -20,19 +41,19 @@
     <loc>https://morebaconstrips.github.io/writeups/web/xss_1/</loc>
     <lastmod>2023-09-16T03:27:05+02:00</lastmod>
   </url><url>
+    <loc>https://morebaconstrips.github.io/writeups/reverse/</loc>
+    <lastmod>2023-09-15T21:14:35+02:00</lastmod>
+  </url><url>
     <loc>https://morebaconstrips.github.io/writeups/web/</loc>
     <lastmod>2023-09-15T21:14:35+02:00</lastmod>
   </url><url>
-    <loc>https://morebaconstrips.github.io/writeups/web/sql_injection-1/</loc>
+    <loc>https://morebaconstrips.github.io/writeups/web/sql_injection_1/</loc>
     <lastmod>2023-09-15T20:48:53+02:00</lastmod>
   </url><url>
     <loc>https://morebaconstrips.github.io/writeups/</loc>
     <lastmod>2023-09-15T19:04:28+02:00</lastmod>
   </url><url>
-    <loc>https://morebaconstrips.github.io/projects/new_project/</loc>
-    <lastmod>2023-09-15T18:57:26+02:00</lastmod>
-  </url><url>
-    <loc>https://morebaconstrips.github.io/projects/</loc>
+    <loc>https://morebaconstrips.github.io/projects/thesis/</loc>
     <lastmod>2023-09-15T18:57:26+02:00</lastmod>
   </url><url>
     <loc>https://morebaconstrips.github.io/about/</loc>

@@ -9,12 +9,23 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 16 Sep 2023 03:37:33 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/writeups/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>nyte_encoding</title>
+      <link>https://morebaconstrips.github.io/writeups/misc/nyte_encoding/</link>
+      <pubDate>Sat, 16 Sep 2023 14:35:18 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/misc/nyte_encoding/</guid>
+      <description> The byte size of 8 bits was chosen because it is a power of 2, other than that, it is an arbitrary length. Instead, we think that the 9-bit byte, i.e. the nyte is much cooler! The string below is a hexadecimal encoding of our flag represented as ASCII in nytes, can you retrieve the flag?
+2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d flag = &amp;#39;&amp;#39; hexadecimal = &amp;#39;2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d&amp;#39; print(&amp;#39;hex:&amp;#39;, hexadecimal) # Transform it into decimal decimal = int(hexadecimal, 16) print(&amp;#39;decimal:&amp;#39;, decimal) # Transform it into binary binary = bin(decimal) print(&amp;#39;binary:&amp;#39;, binary) # Split it into chunks of 9 (instead of 8) sequence = 0 for i in range(len(binary)//9): flag += chr(int(binary[sequence:sequence+9], 2)) sequence += 9 print(flag) </description>
+    </item>
+    
+    <item>
       <title>cookie_cleaner</title>
       <link>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</link>
       <pubDate>Sat, 16 Sep 2023 03:37:43 +0200</pubDate>
       
       <guid>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</guid>
-      <description></description>
+      <description>Everyone knows the best part of browsing the internet is the delicious cookies you get from every website you visit. Therefore we have created a special website just for you to get a lot of new cookies. Can you collect all of them before they turn stale? Start the website by clicking the &amp;lsquo;Start Docker container&amp;rsquo; button below!
+Seems like we need to be faster in order not to let the cookie go bad</description>
     </item>
     
   </channel>

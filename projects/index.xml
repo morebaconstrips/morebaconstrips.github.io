@@ -7,14 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 15 Sep 2023 18:57:26 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Sep 2023 23:45:37 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>New_project</title>
-      <link>https://morebaconstrips.github.io/projects/new_project/</link>
+      <title>Paprikà - Time Tracking Device</title>
+      <link>https://morebaconstrips.github.io/projects/paprika/</link>
+      <pubDate>Sun, 17 Sep 2023 23:45:37 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/projects/paprika/</guid>
+      <description>Mar 2023 - Jun 2023
+For an innovation and entrepreneurship university course, my team and I embarked on a journey to conceptualize, design, and develop a revolutionary product known as Paprikà. This innovative device, shaped like a paprika, seamlessly blends the realms of technology, business acumen, and practicality. Our project&amp;rsquo;s focus was divided equally between innovation and business aspects, and the technical competencies required to bring our idea to life, from 3D printing the device to creating a robust platform with integrated APIs.</description>
+    </item>
+    
+    <item>
+      <title>Adversarial Examples Evading deepfake-image detectors with white-box attacks</title>
+      <link>https://morebaconstrips.github.io/projects/adversarial/</link>
+      <pubDate>Sat, 16 Sep 2023 19:01:48 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/projects/adversarial/</guid>
+      <description>Jan 2023 - Aug 2023
+The project involved conducting in-depth research into potential white and black box attacks on a ResNet50, aiming to significantly reduce the classifier&amp;rsquo;s accuracy to near 0%. Subsequently, white-box attacks were implemented on a ResNet50 model fine-tuned with the TrueFace dataset provided by the University of Trento. The results were remarkable, as we successfully lowered the Neural Network&amp;rsquo;s accuracy from 100% to nearly 0%.</description>
+    </item>
+    
+    <item>
+      <title>Enhancing Thera mental health app: integrating AI-powered safety measures for improved user well-being</title>
+      <link>https://morebaconstrips.github.io/projects/thera/</link>
+      <pubDate>Sat, 16 Sep 2023 18:59:55 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/projects/thera/</guid>
+      <description>Jul 2023 - Aug 2023
+Our team played a pivotal role in advancing Thera (a Lithuanian mental health app) by integrating AI-driven safety measures. By implementing a carefully designed decision-tree logic and dynamic AI filtering, we ensured that user interactions with the app were guided towards safer outcomes. Our contribution significantly bolstered Thera&amp;rsquo;s commitment to user well-being, offering enhanced support and tailored responses while mitigating potential risks, thereby fostering a safer and more effective mental health journey for every user.</description>
+    </item>
+    
+    <item>
+      <title>A robust fingerprint data encryption technique for high security applications</title>
+      <link>https://morebaconstrips.github.io/projects/thesis/</link>
       <pubDate>Fri, 15 Sep 2023 18:57:26 +0200</pubDate>
       
-      <guid>https://morebaconstrips.github.io/projects/new_project/</guid>
-      <description>some projects</description>
+      <guid>https://morebaconstrips.github.io/projects/thesis/</guid>
+      <description>Feb 2022 - Jul 2022
+Project about biometric encryption for my bachelor thesis. I have developed an efficient algorithm for fingerprint recognition and matching. This algorithm served as the foundation of my research, which entails the implementation of a fast and highly secure algorithm of encryption and decryption using Shamir&amp;rsquo;s Secret Sharing scheme.
+Image Processing The first part of the algorithm provides a sequence of operations aimed at making the input image as clear and legible as possible, in order to facilitate the minutiae extraction process.</description>
     </item>
     
   </channel>

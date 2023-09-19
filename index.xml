@@ -127,23 +127,23 @@ email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#3
     </item>
     
     <item>
-      <title>A Robust Fingerprint Data Encryption Technique for High Security Applications</title>
-      <link>https://morebaconstrips.github.io/projects/thesis/</link>
-      <pubDate>Fri, 15 Sep 2023 18:57:26 +0200</pubDate>
-      
-      <guid>https://morebaconstrips.github.io/projects/thesis/</guid>
-      <description>Feb 2022 - Jul 2022
-Project about biometric encryption for my bachelor thesis. I have developed an efficient algorithm for fingerprint recognition and matching. This algorithm served as the foundation of my research, which entails the implementation of a fast and highly secure algorithm of encryption and decryption using Shamir&amp;rsquo;s Secret Sharing scheme.
-Image Processing The first part of the algorithm provides a sequence of operations aimed at making the input image as clear and legible as possible, in order to facilitate the minutiae extraction process.</description>
-    </item>
-    
-    <item>
       <title>About me</title>
       <link>https://morebaconstrips.github.io/about/</link>
       <pubDate>Fri, 15 Sep 2023 18:51:22 +0200</pubDate>
       
       <guid>https://morebaconstrips.github.io/about/</guid>
       <description>Hi there! I&amp;rsquo;m Gabriele, a cybersecurity MSc student whose unique blend of skills, coupled with an insatiable curiosity, has led me on a mission to make the online realm a safer place for all. I hold a Bachelor&amp;rsquo;s degree in Linguistics and one in Computer Science, a combination that may seem unexpected, but it perfectly represents my multifaceted approach to problem-solving and my commitment to understanding the intricacies of cybersecurity from various angles.</description>
+    </item>
+    
+    <item>
+      <title>A Robust Fingerprint Data Encryption Technique for High Security Applications</title>
+      <link>https://morebaconstrips.github.io/projects/thesis/</link>
+      <pubDate>Sat, 17 Sep 2022 18:57:26 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/projects/thesis/</guid>
+      <description>Feb 2022 - Jul 2022
+Project about biometric encryption for my bachelor thesis. I have developed an efficient algorithm for fingerprint recognition and matching. This algorithm served as the foundation of my research, which entails the implementation of a fast and highly secure algorithm of encryption and decryption using Shamir&amp;rsquo;s Secret Sharing scheme.
+Image Processing The first part of the algorithm provides a sequence of operations aimed at making the input image as clear and legible as possible, in order to facilitate the minutiae extraction process.</description>
     </item>
     
   </channel>

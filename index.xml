@@ -7,23 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 01 Oct 2023 18:48:00 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Oct 2023 18:48:00 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>blade_runner</title>
+      <title>Based Encoding</title>
+      <link>https://morebaconstrips.github.io/writeups/web/based_encoding/</link>
+      <pubDate>Mon, 16 Oct 2023 18:48:00 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/writeups/web/based_encoding/</guid>
+      <description>CTF: Hack.lu CTF 2023
+Based encoding as a service. But can we insert a little tomfoolery? Let&amp;rsquo;s find out.
+Link: https://based.skin
+Files: BASED.zip
+When we open the link, we are prompted to visit a website where we can register or log in.
+After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database.</description>
+    </item>
+    
+    <item>
+      <title>Blade Runner</title>
       <link>https://morebaconstrips.github.io/writeups/web/blade_runner/</link>
       <pubDate>Sun, 01 Oct 2023 18:48:00 +0200</pubDate>
       
       <guid>https://morebaconstrips.github.io/writeups/web/blade_runner/</guid>
-      <description>MapleCTF
+      <description>CTF: MapleCTF 2023
 You look lonely. I can fix that.
-Attachment: blade_runner.zip
+Files: blade_runner.zip
 I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.
 This is what the page looks like when visiting the landing page:
 After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page.</description>
     </item>
     
     <item>
-      <title>eval_me</title>
+      <title>Eval Me</title>
       <link>https://morebaconstrips.github.io/writeups/forensics/eval_me/</link>
       <pubDate>Mon, 18 Sep 2023 21:14:12 +0200</pubDate>
       
@@ -65,7 +79,7 @@ Our team played a pivotal role in advancing Thera (a Lithuanian mental health ap
     </item>
     
     <item>
-      <title>git_gud</title>
+      <title>Git Gud</title>
       <link>https://morebaconstrips.github.io/writeups/web/git_gud/</link>
       <pubDate>Sat, 16 Sep 2023 18:48:00 +0200</pubDate>
       
@@ -77,7 +91,7 @@ input: git cat-file -p 8ada2d530c7223ac387dd0ca7de781676a451cc3 output: tree c40
     </item>
     
     <item>
-      <title>key_genie</title>
+      <title>Key Genie</title>
       <link>https://morebaconstrips.github.io/writeups/reverse/key_genie/</link>
       <pubDate>Sat, 16 Sep 2023 14:37:02 +0200</pubDate>
       
@@ -87,7 +101,7 @@ After spinning up the docker container, you can connect to it using netcat, by e
     </item>
     
     <item>
-      <title>nyte_encoding</title>
+      <title>Nyte Encoding</title>
       <link>https://morebaconstrips.github.io/writeups/misc/nyte_encoding/</link>
       <pubDate>Sat, 16 Sep 2023 14:35:18 +0200</pubDate>
       
@@ -97,7 +111,7 @@ After spinning up the docker container, you can connect to it using netcat, by e
     </item>
     
     <item>
-      <title>cookie_cleaner</title>
+      <title>Cookie Cleaner</title>
       <link>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</link>
       <pubDate>Sat, 16 Sep 2023 03:37:43 +0200</pubDate>
       
@@ -107,7 +121,7 @@ Seems like we need to be faster in order not to let the cookie go bad</descripti
     </item>
     
     <item>
-      <title>whistle_blower</title>
+      <title>Whistle Blower</title>
       <link>https://morebaconstrips.github.io/writeups/forensics/whistle_blower/</link>
       <pubDate>Sat, 16 Sep 2023 03:31:38 +0200</pubDate>
       
@@ -119,7 +133,7 @@ Dear Eve, Thank you for your email informing me of your absence.</description>
     </item>
     
     <item>
-      <title>XSS_1</title>
+      <title>XSS 1</title>
       <link>https://morebaconstrips.github.io/writeups/web/xss_1/</link>
       <pubDate>Sat, 16 Sep 2023 03:27:05 +0200</pubDate>
       
@@ -131,7 +145,7 @@ Webhook.site - Test, process and transform emails and HTTP requests
     </item>
     
     <item>
-      <title>SQL_injection 1</title>
+      <title>SQL Injection 1</title>
       <link>https://morebaconstrips.github.io/writeups/web/sql_injection_1/</link>
       <pubDate>Fri, 15 Sep 2023 20:48:53 +0200</pubDate>
       

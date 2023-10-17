@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Oct 2022 - Dec 2022
+The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (DWT) and All Phase Discrete Cosine Biorthogonal Transform (APDCBT), implemented for the &amp;ldquo;Multimedia Data Security&amp;rdquo; project.
+To read the paper on which this implementation was based, go here.
+Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&amp;rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (WPSNR)." />
+<meta name="keywords" content="homepage, blog" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://morebaconstrips.github.io/projects/image_watermarking/" />
+
+
+    <title>
+        
+            Robust Image Watermarking :: Gabriele Abbate  — Cybersecurity MSc student
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Robust Image Watermarking">
+<meta itemprop="description" content="Oct 2022 - Dec 2022
+The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (DWT) and All Phase Discrete Cosine Biorthogonal Transform (APDCBT), implemented for the &ldquo;Multimedia Data Security&rdquo; project.
+To read the paper on which this implementation was based, go here.
+Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (WPSNR)."><meta itemprop="datePublished" content="2022-10-18T00:03:57+02:00" />
+<meta itemprop="dateModified" content="2022-10-18T00:03:57+02:00" />
+<meta itemprop="wordCount" content="461"><meta itemprop="image" content="https://morebaconstrips.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://morebaconstrips.github.io/"/>
+
+<meta name="twitter:title" content="Robust Image Watermarking"/>
+<meta name="twitter:description" content="Oct 2022 - Dec 2022
+The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (DWT) and All Phase Discrete Cosine Biorthogonal Transform (APDCBT), implemented for the &ldquo;Multimedia Data Security&rdquo; project.
+To read the paper on which this implementation was based, go here.
+Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (WPSNR)."/>
+
+
+
+    <meta property="og:title" content="Robust Image Watermarking" />
+<meta property="og:description" content="Oct 2022 - Dec 2022
+The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (DWT) and All Phase Discrete Cosine Biorthogonal Transform (APDCBT), implemented for the &ldquo;Multimedia Data Security&rdquo; project.
+To read the paper on which this implementation was based, go here.
+Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (WPSNR)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://morebaconstrips.github.io/projects/image_watermarking/" /><meta property="og:image" content="https://morebaconstrips.github.io/"/><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2022-10-18T00:03:57+02:00" />
+<meta property="article:modified_time" content="2022-10-18T00:03:57+02:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-10-18 00:03:57 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                gabriele.portfolio.sh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">~/about</a></li><li><a href="/projects">~/projects</a></li><li><a href="/writeups">~/writeups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://morebaconstrips.github.io/projects/image_watermarking/">Robust Image Watermarking</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Oct 2022 - Dec 2022</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (<a href="https://en.wikipedia.org/wiki/Discrete_wavelet_transform">DWT</a>) and All Phase Discrete Cosine Biorthogonal Transform (<a href="https://link.springer.com/article/10.1007/s11042-023-16106-1">APDCBT</a>), implemented for the &ldquo;Multimedia Data Security&rdquo; project.</p>
+<p>To read the paper on which this implementation was based, go <a href="https://www.mdpi.com/2073-8994/10/3/77">here</a>.</p>
+<p>Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (<a href="https://ieeexplore.ieee.org/document/8803307">WPSNR</a>).</p>
+<p>The implemented method is divided into two phases: insertion and extraction.</p>
+<p>The insertion phase is divided into 7 steps:</p>
+<ol>
+<li>
+<p>A one-level DWT decomposition with “Haar” wavelet is first performed on the carrier image, yielding four sub-bands: three high-frequency sub-bands (LH, HL, and HH) and a low-frequency sub-band (LL).</p>
+</li>
+<li>
+<p>We apply DWT decomposition again on the low-frequency sub-band, yielding four sub-bands: three high-frequency sub-bands (LH2, HL2, and HH2) and a low-frequency sub-band (LL2).</p>
+</li>
+<li>
+<p>To reduce the influence of watermark insertion, two high-frequency sub-bands, LH2 and HL2, are selected for the insertion of two identical watermarks. Using the HL2 sub-band as an example, the block-based APDCBT is applied to each sub-block obtained by dividing the image into 8x8 blocks.</p>
+</li>
+<li>
+<p>The DC coefficient of each sub-block is used to generate a new coefficient matrix, denoted by <code>M</code>.</p>
+</li>
+<li>
+<p>The first watermark, <code>W1</code>, is inserted into the coefficient matrix, as shown below:<br>
+<code>SW = S + alpha*W1, SW = U_W * S_W1*V^T_W</code></p>
+<p>Where <code>alpha</code> is the watermark embedding intensity, <code>SW</code> is a matrix containing the watermark information, <code>U_W</code> and <code>V_W</code> are newly generated orthogonal matrices, and <code>S_W1</code> is the modified singular value matrix after watermark insertion.</p>
+</li>
+<li>
+<p>Repeat steps 4 and 5 for the second watermark.</p>
+</li>
+<li>
+<p>At this point, we apply the InverseAPDCBT and twice the InverseDWT to obtain the Watermarked image.</p>
+</li>
+</ol>
+<p>The extraction phase is divided into 6 steps:</p>
+<ol>
+<li>We divide the original image using DWT decomposition twice.</li>
+<li>We apply the APDCBT transformation on the HL2 to obtain 1024 highest coefficients divided into 4x4 of the horizontal wavelet (HORIZ).</li>
+<li>We apply the APDCBT transformation on the LH2 to obtain 1024 highest coefficients divided into 4x4 of the vertical wavelet (VERTIC).</li>
+<li>Apply the same steps on the watermarked image to obtain HORIZ_w and VERTIC_w.</li>
+<li>Now calculate W1 and W2, calculated respectively as (VERTIC_w-VERTIC)/alpha and (HORIZ_w-HORIZ)/alpha.</li>
+<li>Retrieve the watermark W, which is calculated as<br>
+<code>W = (W1+W2)/2</code></li>
+</ol>
+<p>Regarding the attacks, we implemented the classic attacks (i.e., Blur, Median filtering, JPEG compression, etc.) and the most effective combination of them (i.e., Blur + Median, Blur + Median + JPEG, AWGN + Median, Resize + JPEG, etc.). We also implemented localized attacks after dividing the target&rsquo;s watermarked image into n parts.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+
+
+
+    </body>
+</html>

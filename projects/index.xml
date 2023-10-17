@@ -39,6 +39,18 @@ Our team played a pivotal role in advancing Thera (a Lithuanian mental health ap
     </item>
     
     <item>
+      <title>Robust Image Watermarking</title>
+      <link>https://morebaconstrips.github.io/projects/image_watermarking/</link>
+      <pubDate>Tue, 18 Oct 2022 00:03:57 +0200</pubDate>
+      
+      <guid>https://morebaconstrips.github.io/projects/image_watermarking/</guid>
+      <description>Oct 2022 - Dec 2022
+The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (DWT) and All Phase Discrete Cosine Biorthogonal Transform (APDCBT), implemented for the &amp;ldquo;Multimedia Data Security&amp;rdquo; project.
+To read the paper on which this implementation was based, go here.
+Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&amp;rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (WPSNR).</description>
+    </item>
+    
+    <item>
       <title>A Robust Fingerprint Data Encryption Technique for High Security Applications</title>
       <link>https://morebaconstrips.github.io/projects/thesis/</link>
       <pubDate>Sat, 17 Sep 2022 18:57:26 +0200</pubDate>

@@ -7,16 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 16 Sep 2023 14:37:02 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/writeups/reverse/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Sep 2023 14:37:02 +0200</lastBuildDate>
+    <atom:link href="https://morebaconstrips.github.io/writeups/reverse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Key Genie</title>
       <link>https://morebaconstrips.github.io/writeups/reverse/key_genie/</link>
       <pubDate>Sat, 16 Sep 2023 14:37:02 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/reverse/key_genie/</guid>
-      <description>While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.
-After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]</description>
+      <description>While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.&#xA;After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]</description>
     </item>
-    
   </channel>
 </rss>

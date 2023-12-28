@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content=" The byte size of 8 bits was chosen because it is a power of 2, other than that, it is an arbitrary length. Instead, we think that the 9-bit byte, i.e. the nyte is much cooler! The string below is a hexadecimal encoding of our flag represented as ASCII in nytes, can you retrieve the flag?
 2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d flag = &amp;#39;&amp;#39; hexadecimal = &amp;#39;2a120a67b371e4e8653997cc2723297cc4332a15066722f9d0d0403717cc4793a194e67d&amp;#39; print(&amp;#39;hex:&amp;#39;, hexadecimal) # Transform it into decimal decimal = int(hexadecimal, 16) print(&amp;#39;decimal:&amp;#39;, decimal) # Transform it into binary binary = bin(decimal) print(&amp;#39;binary:&amp;#39;, binary) # Split it into chunks of 9 (instead of 8) sequence = 0 for i in range(len(binary)//9): flag &#43;= chr(int(binary[sequence:sequence&#43;9], 2)) sequence &#43;= 9 print(flag) " />
-<meta name="keywords" content="homepage, blog" />
+<meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://morebaconstrips.github.io/writeups/misc/nyte_encoding/" />

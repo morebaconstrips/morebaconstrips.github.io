@@ -82,7 +82,6 @@ After some experimentation, I discovered that the aim of the challenge was to fi
 
 
 
-
     <meta property="article:published_time" content="2023-10-01 18:48:00 &#43;0200 CEST" />
 
 
@@ -164,13 +163,13 @@ After some experimentation, I discovered that the aim of the challenge was to fi
 <p>Files: blade_runner.zip</p>
 <p>I worked on this challenge locally by running the Docker container provided in the .zip file alongside the source code of the web page.</p>
 <p>This is what the page looks like when visiting the landing page:</p>
-<p><img src="/images/br1.png" alt="Screenshot from 2023-10-02 22-18-27.png"></p>
+<p><img alt="Screenshot from 2023-10-02 22-18-27.png" src="/images/br1.png"></p>
 <p>After some experimentation, I discovered that the aim of the challenge was to first register on the website and then log in with the correct credentials in order to open and view the content of the JOI page.</p>
 <p>However, something wasn&rsquo;t working right from the beginning when I tried registering with a random username and password. After submitting the registration form, the backend redirected the data I had inserted to the login page without any response.</p>
-<p><img src="/images/br2.png" alt="Screenshot from 2023-10-02 22-23-46.png"></p>
-<p><img src="/images/br3.png" alt="Screenshot from 2023-10-02 22-24-03.png"></p>
+<p><img alt="Screenshot from 2023-10-02 22-23-46.png" src="/images/br2.png"></p>
+<p><img alt="Screenshot from 2023-10-02 22-24-03.png" src="/images/br3.png"></p>
 <p>Let&rsquo;s intercept some requests with Burp Suite and see if something strange is happening.</p>
-<p><img src="/images/br4.png" alt="Screenshot from 2023-10-02 22-27-47.png"></p>
+<p><img alt="Screenshot from 2023-10-02 22-27-47.png" src="/images/br4.png"></p>
 <p>Wait&hellip; A GET request? Let&rsquo;s also take a look at the source code.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">//user_route.js
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
@@ -417,7 +416,7 @@ After some experimentation, I discovered that the aim of the challenge was to fi
 
 
 
-<script type="text/javascript" src="/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+<script type="text/javascript" src="/bundle.min.85fad2de4f13fec3bcb3b3cb10430cdb44a7b4a9749b32938241a5c6e77718df7624f1002b880521fdc26e24ec1077fda214bf1cb36ee3045510760d09638cae.js" integrity="sha512-hfrS3k8T/sO8s7PLEEMM20SntKl0mzKTgkGlxud3GN92JPEAK4gFIf3CbiTsEHf9ohS/HLNu4wRVEHYNCWOMrg=="></script>
 
 
 

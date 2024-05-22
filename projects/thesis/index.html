@@ -70,6 +70,7 @@ Image Processing The first part of the algorithm provides a sequence of operatio
 
 
 
+
     <meta property="article:published_time" content="2022-09-17 18:57:26 &#43;0200 CEST" />
 
 
@@ -149,37 +150,37 @@ Image Processing The first part of the algorithm provides a sequence of operatio
 <p>Project about biometric encryption for my bachelor thesis. I have developed an efficient algorithm for fingerprint recognition and matching. This algorithm served as the foundation of my research, which entails the implementation of a fast and highly secure algorithm of encryption and decryption using Shamir&rsquo;s Secret Sharing scheme.</p>
 <h1 id="image-processing">Image Processing</h1>
 <p>The first part of the algorithm provides a sequence of operations aimed at making the input image as clear and legible as possible, in order to facilitate the minutiae extraction process. The figure below shows the raw fingerprint image taken as input.</p>
-<p><img alt="Raw" src="/images/14_1_7.jpg#center"></p>
+<p><img src="/images/14_1_7.jpg#center" alt="Raw"></p>
 <h3 id="normalization">Normalization</h3>
 <p>The image is first normalized in order to eliminate the inconsistencies caused by lighting; by adjusting the grayscale levels, it is possible to standardize the intensity levels, thus improving the image contrast and avoiding annoying spikes in the grayscale spectrum. Once the mean values of the image are found, the variance is calculated.</p>
 <p>The figure depicts the normalized fingerprint.</p>
-<p><img alt="Normalized" src="/images/normalizzata.jpg"></p>
+<p><img src="/images/normalizzata.jpg" alt="Normalized"></p>
 <h3 id="segmentation">Segmentation</h3>
 <p>The normalization phase is followed by the segmentation phase, in which the fingerprint is extracted and isolated from the background of the image. The scan is divided into blocks of size W × W, within which the variance of the grayscale levels is calculated. This variance is then compared to a threshold T, and if the value is less than T, the block is considered as background and colored black.</p>
-<p><img alt="normalized" src="/images/segmentata.jpg"></p>
+<p><img src="/images/segmentata.jpg" alt="normalized"></p>
 <h3 id="smoothing">Smoothing</h3>
 <p>In order to avoid false orientation estimates due to excessive noise, a low-pass filter is applied to the orientation map created in the previous step, and with the resulting output, the orientation of each pixel is recalculated. The low-pass filter used for smoothing is applied after the generation of the orientation map to eliminate directional discontinuities that were generated in the same phase. The figures below show the comparison between the orientation map before and after undergoing smoothing.</p>
-<p><img alt="before_smooth" src="/images/orientata_prima_smoothing.jpg">
-<img alt="after_smooth" src="/images/orientata_dopo_smoothing.jpg"></p>
+<p><img src="/images/orientata_prima_smoothing.jpg" alt="before_smooth">
+<img src="/images/orientata_dopo_smoothing.jpg" alt="after_smooth"></p>
 <h3 id="gabor-filter">Gabor filter</h3>
 <p>In this phase, the Gabor filter is used to extract features from the high-intensity points and create a binary image, where black pixels represent the ridges of the fingerprint and white pixels represent the valleys. Since we start from an image with 256 grayscale levels, all pixels whose value is below the threshold become (255, 255, 255), while those that exceed the minimum threshold become (0, 0, 0). The figure shows how the fingerprint image appears at the end of the preprocessing phase after applying the Gabor filter.</p>
-<p><img alt="gabor" src="/images/gabor.jpg"></p>
+<p><img src="/images/gabor.jpg" alt="gabor"></p>
 <h3 id="skeletonization">Skeletonization</h3>
 <p>The binary image created in the previous step is now subjected to a skeletonization process, thinning the black lines that represent the papillary ridges.</p>
-<p><img alt="skeletonization" src="/images/thin.jpg"></p>
+<p><img src="/images/thin.jpg" alt="skeletonization"></p>
 <h1 id="extraction-of-general-and-specific-characteristics">Extraction of general and specific characteristics</h1>
 <p>Once the pre-processing phase is completed, all the means are in place to finally extract the minutiae and singularities from the analyzed fingerprint. The two main types of minutiae, which we will use for fingerprint matching, are terminations and bifurcations. For our purposes, it is convenient to represent a minutia as a quadruple (x, y, θ, t), where x and y are the coordinates expressing the position of the minutia in the image, θ is the direction of the minutia expressed in degrees, and t is the type of minutia (0 if it is a termination, 1 if it is a bifurcation).</p>
 <h3 id="extraction-of-minutiae">Extraction of minutiae</h3>
 <p>Having reached the end of the image processing, we are left with a refined structure from which it is now straightforward to extract the elements that will be used to align the fingerprints and verify their match. The decision was made to use the Crossing Number method to detect and classify the minutiae of the fingerprint.</p>
 <p>Once all the minutiae of the fingerprint have been found, the terminations generated by the image segmentation are eliminated using the mask created during the same phase to blacken the background pixels.</p>
-<p><img alt="minutiae" src="/images/compared_minutiae.jpg"></p>
+<p><img src="/images/compared_minutiae.jpg" alt="minutiae"></p>
 <h3 id="extraction-of-singularities">Extraction of singularities</h3>
 <p>Singularities are the configurations assumed by the dermal ridges in the central section; these have a more general character compared to minutiae (it is not by chance that they are also called general characteristics), and for this reason, they are used to classify fingerprints into categories. The extracted singularities include deltas, loops, and whorls, and the Poincaré Index method was used for this purpose.</p>
 <p>At this point, two data structures have been created for each fingerprint, one containing the set of quadruples for the minutiae, and the other with the set of detected singularities, also in the form (x, y, θ, t).</p>
 <h1 id="alignment">Alignment</h1>
 <p>Once all the necessary information has been obtained, it is time to implement an algorithm that allows verifying whether an input fingerprint matches the one previously enrolled and stored in the database.</p>
 <p>The first step is to select the singularities from both fingerprints to guide the alignment of the minutiae. If these minutiae do not have singularities of the same type, then neither the alignment nor the verification phase proceeds, and the algorithm terminates as a non-match. If they share the same singularity, the position and orientation values are saved. If they have multiple common singularities, the pair that most likely represents a correspondence between the template and the fingerprint to be verified is chosen, and the information is saved. To align the minutiae, their coordinates are first rotated and then translated based on the difference in orientation and position of the singularities.</p>
-<p><img alt="alignment" src="/images/alignment.png"></p>
+<p><img src="/images/alignment.png" alt="alignment"></p>
 <h1 id="biometric-encryption">Biometric encryption</h1>
 <p>The purpose of the algorithm I implemented is not only to verify that during authentication a person&rsquo;s fingerprint matches the one declared and previously saved in the database, but also, and above all, to conceal within the template fingerprint a 128-bit string that will be used for encrypting and decrypting any file using the symmetric key block cipher AES encryption scheme</p>
 <h3 id="encryption-phase">Encryption phase</h3>
@@ -217,7 +218,7 @@ Image Processing The first part of the algorithm provides a sequence of operatio
 
 
 
-<script type="text/javascript" src="/bundle.min.85fad2de4f13fec3bcb3b3cb10430cdb44a7b4a9749b32938241a5c6e77718df7624f1002b880521fdc26e24ec1077fda214bf1cb36ee3045510760d09638cae.js" integrity="sha512-hfrS3k8T/sO8s7PLEEMM20SntKl0mzKTgkGlxud3GN92JPEAK4gFIf3CbiTsEHf9ohS/HLNu4wRVEHYNCWOMrg=="></script>
+<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
 
 
 

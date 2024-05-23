@@ -14,7 +14,7 @@
       <link>https://morebaconstrips.github.io/writeups/hackthebox/perfection/</link>
       <pubDate>Thu, 23 May 2024 00:10:16 +0200</pubDate>
       <guid>https://morebaconstrips.github.io/writeups/hackthebox/perfection/</guid>
-      <description>After trying some code injection I noticed that I could bypass the input sanification by going one line down (adding %0a)&#xA;category1=A%0a The server is written in Ruby, we can try to inject some Embedded Ruby (ERB).&#xA;&amp;lt;%= File.read(&amp;#34;/etc/passwd&amp;#34;) %&amp;gt; Encoding the payload and injecting it gives us the expected result&#xA;I read the name susan in the list of users, so I try to read the user flag in /home/susan/user.</description>
+      <description>Initial Scanning and Reconnaissance After scanning the open ports (22, 80) with Nmap, we visit the http page and land here&#xA;Exploring the Web Application It appears to be a simple weighted grade calculator: When we try to access some files in the file system,we get the following response: Intercepting Requests with Burp Suite Next, we intercept the request with Burp Suite to investigate further: Bypassing Input Sanitization After trying some code injection I noticed that I could bypass the input sanification by going one line down (adding %0a)</description>
     </item>
   </channel>
 </rss>

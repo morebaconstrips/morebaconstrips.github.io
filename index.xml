@@ -4,11 +4,18 @@
     <title>Gabriele Abbate</title>
     <link>https://morebaconstrips.github.io/</link>
     <description>Recent content on Gabriele Abbate</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 23 May 2024 00:10:16 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 12 Mar 2025 03:27:05 +0200</lastBuildDate>
     <atom:link href="https://morebaconstrips.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CapiBar</title>
+      <link>https://morebaconstrips.github.io/writeups/web/capibar/</link>
+      <pubDate>Wed, 12 Mar 2025 03:27:05 +0200</pubDate>
+      <guid>https://morebaconstrips.github.io/writeups/web/capibar/</guid>
+      <description>CTF: Reply HackTheCode Challenge&#xA;Challenge Overview The challenge begins with a login page that requires a username, password, and a reCAPTCHA verification.&#xA;After a few random attempts, I inspected the source code and found loginHandler.js:&#xA;const loginForm = document.getElementById(&amp;#39;loginForm&amp;#39;); loginForm.addEventListener(&amp;#39;submit&amp;#39;, function(event) { event.preventDefault(); const username = document.getElementById(&amp;#39;username&amp;#39;).value; const password = document.getElementById(&amp;#39;password&amp;#39;).value; const captcha = grecaptcha.getResponse(); if (!captcha) { alert(&amp;#34;Completa il reCAPTCHA prima di procedere.&amp;#34;); return; } const data = { username: username, password: password, captcha: captcha }; // Send the login request with fetch - Modified compared to loginHandler-old.</description>
+    </item>
     <item>
       <title>Perfection</title>
       <link>https://morebaconstrips.github.io/writeups/hackthebox/perfection/</link>
@@ -112,7 +119,7 @@
       <link>https://morebaconstrips.github.io/about/</link>
       <pubDate>Fri, 15 Sep 2023 18:51:22 +0200</pubDate>
       <guid>https://morebaconstrips.github.io/about/</guid>
-      <description>$ whoami&#xA;[+] Scanning host&amp;hellip;&#xA;[+] Found 3 degrees:&#xA;- Linguistics @University of Rome La Sapienza (2018) - Computer Science @University of Rome La Sapienza (2022) - Cybersecurity @University of Trento &amp;amp; University of Twente (2024) [+] Found 1 past working experience:&#xA;- Cybersecurity Researcher @Huawei (2024) [+] Found 1 current job:&#xA;- Penetration Tester [+] Found 5 certifications:&#xA;- eJPT (INE security - June 2024) - Pentester and Cybersecurity Expert (Adecco - Apr 2022) - SC-900: Security, Compliance, and Identity Fundamentals (Microsoft - Oct 2021) - Microsoft Certified: Azure AI Fundamentals (Microsoft - Mar 2021) - CyberChallenge (Cybersecurity National Lab - Jul 2020) [+] Found many passions (displaying top 5):</description>
+      <description>$ whoami&#xA;[+] Scanning host&amp;hellip;&#xA;[+] Found 3 degrees:&#xA;- B.A. Linguistics @University of Rome La Sapienza (2018) - B.Sc. Computer Science @University of Rome La Sapienza (2022) - M.Sc. Cybersecurity @University of Trento &amp;amp; University of Twente (2024) [+] Found 2 working experiences:&#xA;- Cybersecurity Researcher intern @Huawei (Feb 2024 - May 2024) - Cybersecurity Analyst @366 Security and Compliance (Sep 2024 - Present) [+] Found 5 certifications:</description>
     </item>
     <item>
       <title>Robust Image Watermarking</title>

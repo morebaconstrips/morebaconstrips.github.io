@@ -4,11 +4,18 @@
     <title>Web on Gabriele Abbate</title>
     <link>https://morebaconstrips.github.io/writeups/web/</link>
     <description>Recent content in Web on Gabriele Abbate</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 16 Oct 2023 18:48:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 12 Mar 2025 03:27:05 +0200</lastBuildDate>
     <atom:link href="https://morebaconstrips.github.io/writeups/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CapiBar</title>
+      <link>https://morebaconstrips.github.io/writeups/web/capibar/</link>
+      <pubDate>Wed, 12 Mar 2025 03:27:05 +0200</pubDate>
+      <guid>https://morebaconstrips.github.io/writeups/web/capibar/</guid>
+      <description>CTF: Reply HackTheCode Challenge&#xA;Challenge Overview The challenge begins with a login page that requires a username, password, and a reCAPTCHA verification.&#xA;After a few random attempts, I inspected the source code and found loginHandler.js:&#xA;const loginForm = document.getElementById(&amp;#39;loginForm&amp;#39;); loginForm.addEventListener(&amp;#39;submit&amp;#39;, function(event) { event.preventDefault(); const username = document.getElementById(&amp;#39;username&amp;#39;).value; const password = document.getElementById(&amp;#39;password&amp;#39;).value; const captcha = grecaptcha.getResponse(); if (!captcha) { alert(&amp;#34;Completa il reCAPTCHA prima di procedere.&amp;#34;); return; } const data = { username: username, password: password, captcha: captcha }; // Send the login request with fetch - Modified compared to loginHandler-old.</description>
+    </item>
     <item>
       <title>Based Encoding</title>
       <link>https://morebaconstrips.github.io/writeups/web/based_encoding/</link>

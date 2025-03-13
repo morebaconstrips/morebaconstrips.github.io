@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="CTF: Reply HackTheCode Challenge
+Challenge Overview The challenge begins with a login page that requires a username, password, and a reCAPTCHA verification.
+After a few random attempts, I inspected the source code and found loginHandler.js:
+const loginForm = document.getElementById(&amp;#39;loginForm&amp;#39;); loginForm.addEventListener(&amp;#39;submit&amp;#39;, function(event) { event.preventDefault(); const username = document.getElementById(&amp;#39;username&amp;#39;).value; const password = document.getElementById(&amp;#39;password&amp;#39;).value; const captcha = grecaptcha.getResponse(); if (!captcha) { alert(&amp;#34;Completa il reCAPTCHA prima di procedere.&amp;#34;); return; } const data = { username: username, password: password, captcha: captcha }; // Send the login request with fetch - Modified compared to loginHandler-old." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://morebaconstrips.github.io/writeups/web/capibar/" />
+
+
+    <title>
+        
+            CapiBar :: Gabriele Abbate  — Cybersecurity MSc student
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="CapiBar">
+  <meta itemprop="description" content="CTF: Reply HackTheCode Challenge
+Challenge Overview The challenge begins with a login page that requires a username, password, and a reCAPTCHA verification.
+After a few random attempts, I inspected the source code and found loginHandler.js:
+const loginForm = document.getElementById(&#39;loginForm&#39;); loginForm.addEventListener(&#39;submit&#39;, function(event) { event.preventDefault(); const username = document.getElementById(&#39;username&#39;).value; const password = document.getElementById(&#39;password&#39;).value; const captcha = grecaptcha.getResponse(); if (!captcha) { alert(&#34;Completa il reCAPTCHA prima di procedere.&#34;); return; } const data = { username: username, password: password, captcha: captcha }; // Send the login request with fetch - Modified compared to loginHandler-old.">
+  <meta itemprop="datePublished" content="2025-03-12T03:27:05+02:00">
+  <meta itemprop="dateModified" content="2025-03-12T03:27:05+02:00">
+  <meta itemprop="wordCount" content="436">
+  <meta itemprop="image" content="https://morebaconstrips.github.io/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://morebaconstrips.github.io/">
+  <meta name="twitter:title" content="CapiBar">
+  <meta name="twitter:description" content="CTF: Reply HackTheCode Challenge
+Challenge Overview The challenge begins with a login page that requires a username, password, and a reCAPTCHA verification.
+After a few random attempts, I inspected the source code and found loginHandler.js:
+const loginForm = document.getElementById(&#39;loginForm&#39;); loginForm.addEventListener(&#39;submit&#39;, function(event) { event.preventDefault(); const username = document.getElementById(&#39;username&#39;).value; const password = document.getElementById(&#39;password&#39;).value; const captcha = grecaptcha.getResponse(); if (!captcha) { alert(&#34;Completa il reCAPTCHA prima di procedere.&#34;); return; } const data = { username: username, password: password, captcha: captcha }; // Send the login request with fetch - Modified compared to loginHandler-old.">
+
+
+
+    <meta property="og:url" content="https://morebaconstrips.github.io/writeups/web/capibar/">
+  <meta property="og:site_name" content="Gabriele Abbate">
+  <meta property="og:title" content="CapiBar">
+  <meta property="og:description" content="CTF: Reply HackTheCode Challenge
+Challenge Overview The challenge begins with a login page that requires a username, password, and a reCAPTCHA verification.
+After a few random attempts, I inspected the source code and found loginHandler.js:
+const loginForm = document.getElementById(&#39;loginForm&#39;); loginForm.addEventListener(&#39;submit&#39;, function(event) { event.preventDefault(); const username = document.getElementById(&#39;username&#39;).value; const password = document.getElementById(&#39;password&#39;).value; const captcha = grecaptcha.getResponse(); if (!captcha) { alert(&#34;Completa il reCAPTCHA prima di procedere.&#34;); return; } const data = { username: username, password: password, captcha: captcha }; // Send the login request with fetch - Modified compared to loginHandler-old.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="writeups">
+    <meta property="article:published_time" content="2025-03-12T03:27:05+02:00">
+    <meta property="article:modified_time" content="2025-03-12T03:27:05+02:00">
+    <meta property="og:image" content="https://morebaconstrips.github.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2025-03-12 03:27:05 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                gabriele@portfolio:~$</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">./about.sh</a></li><li><a href="/projects">~/projects/</a></li><li><a href="/writeups">~/writeups/</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://morebaconstrips.github.io/writeups/web/capibar/">CapiBar</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <blockquote>
+<p>CTF: Reply HackTheCode Challenge</p>
+</blockquote>
+<h2 id="challenge-overview"><strong>Challenge Overview</strong></h2>
+<p>The challenge begins with a login page that requires a username, password, and a reCAPTCHA verification.</p>
+<p><img alt="capibar1.png" src="/images/capibar/capibar1.png"></p>
+<p>After a few random attempts, I inspected the source code and found <strong>loginHandler.js</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">loginForm</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;loginForm&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loginForm</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;submit&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;username&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;password&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">captcha</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">grecaptcha</span>.<span style="color:#a6e22e">getResponse</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">captcha</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Completa il reCAPTCHA prima di procedere.&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">username</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">username</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">password</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">captcha</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">captcha</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Send the login request with fetch - Modified compared to loginHandler-old.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;/web2-a5ddb034b64dd028318c7868c2f7eb9996263fe6/login&#39;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,  
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> 
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>) 
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>()) 
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">success</span>) {
+</span></span><span style="display:flex;"><span>            window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/web2-a5ddb034b64dd028318c7868c2f7eb9996263fe6/dashboard&#39;</span>; 
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Invalid credentials, please try again.&#39;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">grecaptcha</span>.<span style="color:#a6e22e">reset</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;An error occurred. Please try again.&#39;</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="finding-hardcoded-credentials"><strong>Finding Hardcoded Credentials</strong></h3>
+<p>I discovered an old version, <strong>loginHandler-old.js</strong>, which contained base64-encoded credentials:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">loginForm</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;loginForm&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loginForm</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;submit&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;username&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;password&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Q2FwaURydW5rOmQpOFFNLW06NzlFQg==
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// const validUsername = OMITTED;  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// const validPassword = OMITTED
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">username</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">validUsername</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">password</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">validPassword</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Login successful!&#39;</span>);
+</span></span><span style="display:flex;"><span>        window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/dashboard&#39;</span>;  
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Invalid credentials, please try again.&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Decoding this reveals the credentials:</p>
+<p><strong>Username:</strong> <code>CapiDrunk</code></p>
+<p><strong>Password:</strong> <code>d)8QM-m:79EB</code></p>
+<p>Using these, I successfully logged in.</p>
+<p><img alt="capibar3.png" src="/images/capibar/capibar3.png"></p>
+<p>However, most buttons were non-functional except for the <strong>profile</strong> section, which used an ID parameter—perfect for <strong>IDOR (Insecure Direct Object References)</strong> testing.</p>
+<p><img alt="capibar4.png" src="/images/capibar/capibar4.png"></p>
+<p><img alt="capibar5.png" src="/images/capibar/capibar5.png"></p>
+<h3 id="extracting-admin-credentials"><strong>Extracting Admin Credentials</strong></h3>
+<p>By exploiting IDOR, I retrieved the admin credentials:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Password Hash</td>
+<td><code>76f2ad0adeaa2a79f955dda5c5647ba0f806dc6f</code></td>
+</tr>
+<tr>
+<td>Username</td>
+<td><code>CapiBARdmin</code></td>
+</tr>
+</tbody>
+</table>
+<p>The password appeared hashed, so I attempted a <strong>rainbow table attack</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Hash</th>
+<th>Type</th>
+<th>Cracked Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>76f2ad0adeaa2a79f955dda5c5647ba0f806dc6f</code></td>
+<td>SHA-1</td>
+<td><code>barbara12</code></td>
+</tr>
+</tbody>
+</table>
+<p>Wow, that was quick! Using these credentials, I accessed the <strong>admin panel</strong>.</p>
+<p><img alt="capibar6.png" src="/images/capibar/capibar6.png"></p>
+<h3 id="finding-the-flag"><strong>Finding the Flag</strong></h3>
+<p>Good! where is the flag though? Inspecting the source code, I found an obfuscated function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>        (<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_0x1234</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;PHE6Y2JRGGMQHjJwJmUpZjkCZmJFPFxtBFYGFQc0S1QkIgYTZko=&#34;</span>, <span style="color:#e6db74">&#34;atob&#34;</span>, <span style="color:#e6db74">&#34;charCodeAt&#34;</span>, <span style="color:#e6db74">&#34;fromCharCode&#34;</span>, <span style="color:#e6db74">&#34;length&#34;</span>, <span style="color:#e6db74">&#34;setItem&#34;</span>, <span style="color:#e6db74">&#34;flg&#34;</span>];
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_0x5678</span>(<span style="color:#a6e22e">_0x9876</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">_0x1234</span>[<span style="color:#a6e22e">_0x9876</span>];
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_0xabcd</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">0</span>); 
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_0xdcba</span> <span style="color:#f92672">=</span> window[<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">1</span>)](<span style="color:#a6e22e">_0xabcd</span>); 
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_0xef12</span>(<span style="color:#a6e22e">_0x4321</span>, <span style="color:#a6e22e">_0x6543</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_0x789a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_0xbcde</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">_0xbcde</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">_0x4321</span>[<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">4</span>)]; <span style="color:#a6e22e">_0xbcde</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">_0x789a</span> <span style="color:#f92672">+=</span> String[<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">3</span>)](<span style="color:#a6e22e">_0x4321</span>[<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">2</span>)](<span style="color:#a6e22e">_0xbcde</span>) <span style="color:#f92672">^</span> <span style="color:#a6e22e">_0x6543</span>[<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">2</span>)](<span style="color:#a6e22e">_0xbcde</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">_0x6543</span>[<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">4</span>)]));
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">_0x789a</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_0xkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;G7v$Xp9!qLm2&#34;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_0xdecodedFlag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_0xef12</span>(<span style="color:#a6e22e">_0xdcba</span>, <span style="color:#a6e22e">_0xkey</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">localStorage</span>[<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">5</span>)](<span style="color:#a6e22e">_0x5678</span>(<span style="color:#ae81ff">6</span>), <span style="color:#a6e22e">_0xdecodedFlag</span>);
+</span></span><span style="display:flex;"><span>        })();
+</span></span></code></pre></div><h3 id="decoding-the-flag"><strong>Decoding the Flag</strong></h3>
+<p>The script <strong>XORs</strong> a Base64-encoded secret with a key:</p>
+<ul>
+<li><strong>Secret:</strong> <code>PHE6Y2JRGGMQHjJwJmUpZjkCZmJFPFxtBFYGFQc0S1QkIgYTZko=</code></li>
+<li><strong>Key:</strong> <code>G7v$Xp9!qLm2</code></li>
+</ul>
+<p>I wrote a simple Python script to decrypt it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SECRET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;PHE6Y2JRGGMQHjJwJmUpZjkCZmJFPFxtBFYGFQc0S1QkIgYTZko=&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>decoded_bytes <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(SECRET)
+</span></span><span style="display:flex;"><span>decoded_str <span style="color:#f92672">=</span> decoded_bytes<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;G7v$Xp9!qLm2&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xor_decrypt</span>(data, key):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(chr(ord(data[i]) <span style="color:#f92672">^</span> ord(key[i <span style="color:#f92672">%</span> len(key)])) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(data)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt the flag</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> xor_decrypt(decoded_str, KEY)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(flag)
+</span></span></code></pre></div><p>Flag: {FLG:!!BaR_BaR_Bar_C4p1_Cap1_DruUnk!!}</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+
+
+
+    </body>
+</html>
